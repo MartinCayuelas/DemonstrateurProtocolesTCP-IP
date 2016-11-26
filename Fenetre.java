@@ -41,14 +41,15 @@ public class Fenetre extends JFrame {
 	private JButton bSousReseau = new JButton("Sous-réseau");
 	private JButton bConnexion = new JButton("Connexion");
 
-	private JPanel fen = new JPanel();
+	
 	private PanneauPrincipal pan = new PanneauPrincipal();
-	private	JPanel bouton = new JPanel();
+	private PanneauBouton  bouton = new PanneauBouton(pan);
+	
 	
 
 	public Fenetre() {
 		this.setTitle("Demonstrateur TCP/IP");
-		this.setSize(1300, 800);
+		this.setSize(1550, 800);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setResizable(false);
 		this.setLocationRelativeTo(null);
@@ -56,26 +57,8 @@ public class Fenetre extends JFrame {
 
 		//barre des tâches
 
-
-			
-
-    		
-    		
-    		pan.add(bouton, BorderLayout.WEST);
-    		
-    		fen.setBackground(Color.LIGHT_GRAY);
-    		fen.setLayout(new BorderLayout());
-    		fen.add(pan, BorderLayout.NORTH);
-    		
-    		
-        	this.setContentPane(fen);
+        	this.setContentPane(pan);
 	
-	        bouton.add(bMachine);
-		bouton.add(bSwitch);
-		bouton.add(bRouteur);
-		bouton.add(bHub);
-		bouton.add(bSousReseau);
-		bouton.add(bConnexion);
 
 
 		//Barre de Menu
@@ -115,56 +98,5 @@ public class Fenetre extends JFrame {
 		menuBar.add(edition);
 		menuBar.add(analyse);
 		
-		//Action Listener
-		
-		
-		ActionListener ordi = new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				System.out.println("ordi");
-
-			}
-
-		};
-		ActionListener hub1 = new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				System.out.println("hub");
-			}
-
-		};
-		ActionListener switch1 = new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				System.out.println("switch");
-
-			}
-
-		};
-		ActionListener routeur = new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				System.out.println("routeur");
-
-			}
-
-		};
-		ActionListener connexion = new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				System.out.println("connexion");
-
-			}
-
-		};
-
-		ActionListener sousRes = new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				System.out.println("sous-reseau");
-			}
-
-		};
-		
-		bMachine.addActionListener(ordi);
-		bHub.addActionListener(hub1);
-		bSwitch.addActionListener(switch1);
-		bRouteur.addActionListener(routeur);
-		bConnexion.addActionListener(connexion);
-		bSousReseau.addActionListener(sousRes);
 	}
 }

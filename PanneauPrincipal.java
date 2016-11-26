@@ -14,15 +14,22 @@ public class PanneauPrincipal extends JPanel {
 	 * 
 	 */
 
-	//PanneauTableRoutage tab = new PanneauTableRoutage(this);
+	PanneauBouton panB = new PanneauBouton(this);
 	
 	public PanneauPrincipal(){
         this.setLayout(new BorderLayout(1,1));
         this.setBackground(Color.WHITE);
         
+        this.add(panB, BorderLayout.NORTH);
+       // this.add("North",panB);
+        
        
        
     }
+	
+	 public PanneauBouton getPanelBouton(){
+	        return this.panB;
+	    }
 	
 	
 }
