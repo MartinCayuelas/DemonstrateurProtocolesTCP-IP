@@ -10,7 +10,7 @@ public class PanneauImage extends JPanel {
 	public void paintComponent(Graphics g){
 		 try {
 
-		     Image  img = ImageIO.read(new File("Trame.png"));
+		     Image  img = ImageIO.read(new File("./images/Trame.png"));
 		     g.drawImage(img, 50, 0, 1100, 770, this);
 		     
 

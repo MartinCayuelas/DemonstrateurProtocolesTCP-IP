@@ -1,14 +1,14 @@
+import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
-import javax.swing.ImageIcon;
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
-import javax.swing.JButton;
 import javax.swing.JPanel;
-import java.awt.BorderLayout;
-import java.awt.Color;
 
 public class Fenetre extends JFrame {
 
@@ -21,6 +21,7 @@ public class Fenetre extends JFrame {
 	private JMenuItem routeur = new JMenuItem("Ajouter un routeur");
 	private JMenuItem hub = new JMenuItem("Ajouter un hub");
 	private JMenuItem switch1 = new JMenuItem("Ajouter un switch");
+	private JMenuItem sousreseau = new JMenuItem("Ajouter un sous-réseau");
 	
 	private JMenu analyse = new JMenu("Analyse");
 	private JMenuItem trame = new JMenuItem("Visualiser une Trame");
@@ -39,7 +40,7 @@ public class Fenetre extends JFrame {
 	private JButton bHub = new JButton("ButtonH");
 
 	private JPanel fen = new JPanel();
-	private	JPanel pan = new JPanel();
+	private PanneauPrincipal pan = new PanneauPrincipal();
 	private	JPanel bouton = new JPanel();
 	
 
@@ -51,16 +52,20 @@ public class Fenetre extends JFrame {
 		this.setLocationRelativeTo(null);
 		this.setVisible(true);
 
-		//barre des tÃ¢ches
+		//barre des tâches
 
 
-		fen.setBackground(Color.white);
+			
+
+    		
+    		
+    		pan.add(bouton, BorderLayout.WEST);
+    		
+    		fen.setBackground(Color.LIGHT_GRAY);
     		fen.setLayout(new BorderLayout());
     		fen.add(pan, BorderLayout.NORTH);
-
-    		pan.setBackground(Color.white);
-    		pan.setLayout(new BorderLayout());
-    		pan.add(bouton, BorderLayout.WEST);
+    		
+    		
         	this.setContentPane(fen);
 	
 	        bouton.add(bMachine);
@@ -72,22 +77,38 @@ public class Fenetre extends JFrame {
 		//Barre de Menu
 		this.setJMenuBar(menuBar);
 		this.fichier.add(quit);
-		quit.addActionListener((ActionEvent arg0) -> {
-			System.exit(0);
-		});
-		
-		this.edition.add(machine);
-		this.edition.add(routeur);
-		this.edition.add(hub);
-		this.edition.add(switch1);
-		
-		this.analyse.add(trame);
-			trame.addActionListener((ActionEvent arg0) ->{
-				FenetreTrame trame = new FenetreTrame();
-			});
+		//Listener pour quitter l'application
+				ActionListener quitter = new ActionListener() {
+					public void actionPerformed(ActionEvent e) {
+						System.out.println("Quitter");
+						System.exit(0);
+					}
+				};
+				quit.addActionListener(quitter);
+
+				this.edition.add(machine);
+				this.edition.add(routeur);
+				this.edition.add(hub);
+				this.edition.add(switch1);
+				this.edition.add(sousreseau);
+				
+				
+				
+			
+				
+
+				this.analyse.add(trame);
+				
+				//Listener pour afficher la trame
+				ActionListener trame2 = new ActionListener() {
+					public void actionPerformed(ActionEvent e) {
+						FenetreTrame trame = new FenetreTrame();
+						
+					}
+				};
+				this.trame.addActionListener(trame2);
 		menuBar.add(fichier);
 		menuBar.add(edition);
 		menuBar.add(analyse);
 	}
-
 }

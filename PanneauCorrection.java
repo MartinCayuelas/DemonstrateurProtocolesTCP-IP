@@ -10,7 +10,7 @@ public class PanneauCorrection extends JPanel {
 	public void paintComponent(Graphics g){
 		 try {
 
-		     Image  img = ImageIO.read(new File("Correction.png"));
+		     Image  img = ImageIO.read(new File("./images/Correction.png"));
 		     g.drawImage(img, 0, 0, 849, 699, this);
 		     
 
