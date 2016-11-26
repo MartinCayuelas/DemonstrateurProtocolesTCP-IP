@@ -1,10 +1,14 @@
 import java.awt.event.ActionEvent;
 
+import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JButton;
+import javax.swing.JPanel;
+import java.awt.BorderLayout;
+import java.awt.Color;
 
 public class Fenetre extends JFrame {
 
@@ -21,10 +25,22 @@ public class Fenetre extends JFrame {
 	private JMenu analyse = new JMenu("Analyse");
 	private JMenuItem trame = new JMenuItem("Visualiser une Trame");
 	
-	private JButton bMachine = new JButton("Machine");
-	private JButton bSwitch = new JButton("Switch");
-	private JButton bRouteur = new JButton("Routeur");
-	private JButton bHub = new JButton("Hub");
+
+
+
+	//ImageIcon ButtonM = new ImageIcon(this.getClass().getResource("/image/poste.png"));
+	//ImageIcon ButtonS = new ImageIcon(this.getClass().getResource("/image/switch.png"));
+	//ImageIcon ButtonR = new ImageIcon(this.getClass().getResource("/image/routeur.png"));
+	//ImageIcon ButtonH = new ImageIcon(this.getClass().getResource("/image/HUB.png"));
+
+	private JButton bMachine = new JButton("ButtonM");
+	private JButton bSwitch = new JButton("ButtonS");
+	private JButton bRouteur = new JButton("ButtonR");
+	private JButton bHub = new JButton("ButtonH");
+
+	private JPanel fen = new JPanel();
+	private	JPanel pan = new JPanel();
+	private	JPanel bouton = new JPanel();
 	
 
 	public Fenetre() {
@@ -36,16 +52,23 @@ public class Fenetre extends JFrame {
 		this.setVisible(true);
 
 		//barre des tâches
-		
-		JPanel pan = new JPanel();
 
-		pan.add(bMachine);
-		pan.add(bSwitch);
-		pan.add(bRouteur);
-		pan.add(bHub);
-		this.setContentPane(pan);
-		
-		
+
+		fen.setBackground(Color.white);
+    		fen.setLayout(new BorderLayout());
+    		fen.add(pan, BorderLayout.NORTH);
+
+    		pan.setBackground(Color.white);
+    		pan.setLayout(new BorderLayout());
+    		pan.add(bouton, BorderLayout.WEST);
+        	this.setContentPane(fen);
+	
+	        bouton.add(bMachine);
+		bouton.add(bSwitch);
+		bouton.add(bRouteur);
+		bouton.add(bHub);
+
+
 		//Barre de Menu
 		this.setJMenuBar(menuBar);
 		this.fichier.add(quit);
