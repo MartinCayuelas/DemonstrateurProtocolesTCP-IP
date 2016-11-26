@@ -38,6 +38,8 @@ public class Fenetre extends JFrame {
 	private JButton bSwitch = new JButton("ButtonS");
 	private JButton bRouteur = new JButton("ButtonR");
 	private JButton bHub = new JButton("ButtonH");
+	private JButton bSousReseau = new JButton("Sous-réseau");
+	private JButton bConnexion = new JButton("Connexion");
 
 	private JPanel fen = new JPanel();
 	private PanneauPrincipal pan = new PanneauPrincipal();
@@ -72,6 +74,8 @@ public class Fenetre extends JFrame {
 		bouton.add(bSwitch);
 		bouton.add(bRouteur);
 		bouton.add(bHub);
+		bouton.add(bSousReseau);
+		bouton.add(bConnexion);
 
 
 		//Barre de Menu
@@ -110,5 +114,57 @@ public class Fenetre extends JFrame {
 		menuBar.add(fichier);
 		menuBar.add(edition);
 		menuBar.add(analyse);
+		
+		//Action Listener
+		
+		
+		ActionListener ordi = new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				System.out.println("ordi");
+
+			}
+
+		};
+		ActionListener hub1 = new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				System.out.println("hub");
+			}
+
+		};
+		ActionListener switch1 = new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				System.out.println("switch");
+
+			}
+
+		};
+		ActionListener routeur = new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				System.out.println("routeur");
+
+			}
+
+		};
+		ActionListener connexion = new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				System.out.println("connexion");
+
+			}
+
+		};
+
+		ActionListener sousRes = new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				System.out.println("sous-reseau");
+			}
+
+		};
+		
+		bMachine.addActionListener(ordi);
+		bHub.addActionListener(hub1);
+		bSwitch.addActionListener(switch1);
+		bRouteur.addActionListener(routeur);
+		bConnexion.addActionListener(connexion);
+		bSousReseau.addActionListener(sousRes);
 	}
 }
