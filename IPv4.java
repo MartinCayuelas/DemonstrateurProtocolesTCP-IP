@@ -1,5 +1,5 @@
-
-import import java.io.Serializable;
+package modnetwork.Reseau;
+ import java.io.Serializable;
 
 /**
 * @author CayuelasM

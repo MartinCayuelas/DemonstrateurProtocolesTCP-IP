@@ -1,3 +1,4 @@
+package modnetwork.Reseau;
 import java.io.Serializable;
 
 
