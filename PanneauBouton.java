@@ -15,13 +15,15 @@ public class PanneauBouton extends JPanel {
 	ImageIcon ButtonS = new ImageIcon(this.getClass().getResource("/image/switch.png"));
  	ImageIcon ButtonR = new ImageIcon(this.getClass().getResource("/image/routeur.png"));
 	ImageIcon ButtonH = new ImageIcon(this.getClass().getResource("/image/HUB.png"));
+	ImageIcon ButtonL = new ImageIcon(this.getClass().getResource("/image/liaison.png"));
+	ImageIcon ButtonSR = new ImageIcon(this.getClass().getResource("/image/sousR.png"));
 	
 	private JButton bMachine = new JButton(ButtonM);
 	private JButton bSwitch = new JButton(ButtonS);
 	private JButton bRouteur = new JButton(ButtonR);
 	private JButton bHub = new JButton(ButtonH);
-	private JButton bSousReseau = new JButton("Sous-réseau");
-	private JButton bConnexion = new JButton("Connexion");
+	private JButton bSousReseau = new JButton(ButtonSR);
+	private JButton bConnexion = new JButton(ButtonL);
 
 	private final JButton rout = new JButton("routage");// Test
 
