@@ -33,8 +33,9 @@ public class PanneauBouton extends JPanel {
 	 *            PanelPrincipal dans lequel est inséré le PanelBouton
 	 */
 	public PanneauBouton(PanneauPrincipal p) {
+		
 			this.add(bMachine);
-		   this.add(bSwitch);
+		 	this.add(bSwitch);
 			this.add(bRouteur);
 			this.add(bHub);
 			this.add(bSousReseau);
