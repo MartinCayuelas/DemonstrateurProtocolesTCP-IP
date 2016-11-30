@@ -11,11 +11,16 @@ public class PanneauBouton extends JPanel {
 	 */
 	private static final long serialVersionUID = 1L;
 	
-	private JButton bMachine = new JButton("ButtonM");
-	private JButton bSwitch = new JButton("ButtonS");
-	private JButton bRouteur = new JButton("ButtonR");
-	private JButton bHub = new JButton("ButtonH");
-	private JButton bSousReseau = new JButton("Sous-réseau");
+	ImageIcon ButtonM = new ImageIcon(this.getClass().getResource("/image/poste.png"));
+	ImageIcon ButtonS = new ImageIcon(this.getClass().getResource("/image/switch.png"));
+ 	ImageIcon ButtonR = new ImageIcon(this.getClass().getResource("/image/routeur.png"));
+	ImageIcon ButtonH = new ImageIcon(this.getClass().getResource("/image/HUB.png"));
+	
+	private JButton bMachine = new JButton(ButtonM);
+	private JButton bSwitch = new JButton(ButtonS);
+	private JButton bRouteur = new JButton(ButtonR);
+	private JButton bHub = new JButton(ButtonH);
+	private JButton bSousReseau = new JButton("Sous-rÃ©seau");
 	private JButton bConnexion = new JButton("Connexion");
 
 	private final JButton rout = new JButton("routage");// Test
@@ -23,7 +28,7 @@ public class PanneauBouton extends JPanel {
 	/**
 	 *
 	 * @param p
-	 *            PanelPrincipal dans lequel est inséré le PanelBouton
+	 *            PanelPrincipal dans lequel est insÃ©rÃ© le PanelBouton
 	 */
 	public PanneauBouton(PanneauPrincipal p) {
 			this.add(bMachine);
