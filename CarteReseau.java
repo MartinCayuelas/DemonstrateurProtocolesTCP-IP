@@ -1,4 +1,4 @@
-import import java.io.Serializable;
+import  java.io.Serializable;
 
 public class CarteReseau implements Serializable{
 
