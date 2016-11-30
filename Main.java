@@ -1,9 +1,15 @@
-public class Main {
+package modnetwork.Reseau;
+
+public class Main{
+
+
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		IPv4 addIp = new IPv4(123,34,21,3);
+		MAC addmac = new Mac();
 
-		Fenetre fenetre = new Fenetre();
+		System.out.println(addmac);
+		System.out.println(addIp);
 	}
-
+	
 }

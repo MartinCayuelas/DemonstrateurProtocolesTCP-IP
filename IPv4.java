@@ -1,4 +1,4 @@
-package modnetwork.Reseau;
+package modnetwork.Reseau.Adresse;
  import java.io.Serializable;
 
 /**
@@ -6,7 +6,7 @@ package modnetwork.Reseau;
 *
 */
 
-public class IPv4 extends Adresse(){
+public class IPv4 extends Adresse{
 
 	 /**
      * Crée une nouvelle adresse IPv4

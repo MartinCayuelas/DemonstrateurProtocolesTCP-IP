@@ -15,9 +15,9 @@ public class infoElement implements Serializable {
 
 	public infoElement(IPv4 ip){
 
-		addresseIP = ip
-		addresseMAC = new Mac();
-		TableRoutage tabRoutage = new TableRoutage();
+		this.addresseIP = ip;
+		this.addresseMAC = new Mac();
+		this.tabRoutage = new TableRoutage();
 	}
 
 	// Getters

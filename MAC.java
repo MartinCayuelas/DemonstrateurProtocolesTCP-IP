@@ -1,4 +1,4 @@
-package modnetwork.Reseau;
+package modnetwork.Reseau.Adresse;
 import java.io.Serializable;
 
 /**
@@ -6,7 +6,7 @@ import java.io.Serializable;
 * @author cayuelasM
 */
 
-public class MAC extends Adresse(){
+public class MAC extends Adresse {
 
 	private String octet5;  // Le 5e octet
 	private String octet6;  // Le 6e octet
