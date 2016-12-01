@@ -1,36 +1,57 @@
-import  java.io.Serializable;
+package modnetwork.Reseau;
+import java.io.Serializable;
 
-public class CarteReseau implements Serializable{
 
-	//variables	
-	private MAC adresseMac;
-	private IPv4 adresseIp;	
+/**
+*
+* @author cayuelasM
+*/
 
-	//constructeur
+public class CarteReseau implements Serializable {
+
+	private IPv4 addresseIP;
+	private MAC  addresseMAC;
+	private TableRoutage tabRoutage;
+
 	public CarteReseau(IPv4 ip){
-		this.adresseMac = new MAC();
-		this.adresseIp = ip;
+
+		this.addresseIP = ip;
+		this.addresseMAC = new MAC();
+		this.tabRoutage = new TableRoutage();
 	}
 
-	//methodes
-	//getters
-	public MAC getAdresseMac(){
-		return this.adresseMac;
-	}
+	// Getters
 
-	public IPv4 getAdresseIp(){
-		return this.adresseIp;
-	}
+        /**
+         * Getter Adresse IP de la carte réseau
+         * @return Adresse IP
+         */
+        public IPv4 getIP() {
+            return this.addresseIP;
+        }
 
-	//setters
-	public void setAdresseMac(MAC m){
-		this.adresseMac = m;
-	}
+        /**
+         * Getter Adresse MAC de la carte réseau
+         * @return Adresse MAC
+         */
+        public MAC getMAC() {
+            return this.addresseMAC;
+        }
+        
+        /**
+         * Getter table de routage de la carte réseau
+         */
+        public TableRoutage getTable() {
+            return this.tabRoutage;
+        }
 
-	public void setAdresseIp(IPv4 ip){
-		this.adresseIp = ip;
-	}
 
-	//autres
-
-}
+         /**
+         * Le toString de la classe
+         * @return Affichage du couple
+         */
+        public String toString() {
+            return (" @ MAC : " + this.addresseMAC + " @ IP : " + this.addresseIP);
+        }
+    }
+	

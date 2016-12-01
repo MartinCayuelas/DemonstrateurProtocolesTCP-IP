@@ -1,104 +1,91 @@
+package modnetwork.Fenetre;
+
+import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 
+
+/**
+*
+* @author cayuelasM
+* @author gonzalezR
+*/
 public class PanneauBouton extends JPanel {
 
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	
-	ImageIcon ButtonM = new ImageIcon(this.getClass().getResource("/image/poste.png"));
-	ImageIcon ButtonS = new ImageIcon(this.getClass().getResource("/image/switch.png"));
- 	ImageIcon ButtonR = new ImageIcon(this.getClass().getResource("/image/routeur.png"));
-	ImageIcon ButtonH = new ImageIcon(this.getClass().getResource("/image/HUB.png"));
-	ImageIcon ButtonL = new ImageIcon(this.getClass().getResource("/image/liaison.png"));
-	ImageIcon ButtonSR = new ImageIcon(this.getClass().getResource("/image/sousR.png"));
-	
-	private JButton bMachine = new JButton(ButtonM);
-	private JButton bSwitch = new JButton(ButtonS);
-	private JButton bRouteur = new JButton(ButtonR);
-	private JButton bHub = new JButton(ButtonH);
-	private JButton bSousReseau = new JButton(ButtonSR);
-	private JButton bConnexion = new JButton(ButtonL);
+
+	private JButton bMachine = new JButton();
+	private JButton bSwitch = new JButton();
+	private JButton bRouteur = new JButton();
+	private JButton bHub = new JButton();
+	private JButton bSousReseau = new JButton();
+	private JButton bConnexion = new JButton();
+	private boolean ordiSelected = false;
+	private boolean hubSelected = false;
+	private boolean routeurSelected = false;
+	private boolean switchSelected = false;
+	private boolean connectSelected = false;
+	private boolean sousReseauSelected = false;
+	private boolean simulationSelected = false;
 
 	private final JButton rout = new JButton("routage");// Test
+
+	private PanneauPrincipal panneau;
 
 	/**
 	 *
 	 * @param p
-	 *            PanelPrincipal dans lequel est insÃ©rÃ© le PanelBouton
+	 *            PanelPrincipal dans lequel est inséré le PanelBouton
 	 */
 	public PanneauBouton(PanneauPrincipal p) {
-		
-			this.add(bMachine);
-		 	this.add(bSwitch);
-			this.add(bRouteur);
-			this.add(bHub);
-			this.add(bSousReseau);
-			this.add(bConnexion);
+		this.panneau = p;
+
+		ImageIcon ButtonM = new ImageIcon("./images/poste.png");
+		ImageIcon ButtonS = new ImageIcon("./images/switch.png");
+		ImageIcon ButtonR = new ImageIcon("./images/routeur.png");
+		ImageIcon ButtonH = new ImageIcon("./images/HUB.png");
+		ImageIcon ButtonL = new ImageIcon("./images/liaison.png");
+		ImageIcon ButtonSR = new ImageIcon("./images/sousR.png");
+
+		bMachine.setIcon(ButtonM);
+		bSwitch.setIcon(ButtonS);
+		bRouteur.setIcon(ButtonR);
+		bHub.setIcon(ButtonH);
+		bSousReseau.setIcon(ButtonSR);
+		bConnexion.setIcon(ButtonL);
+
+		bMachine.setBackground(Color.GRAY);
+		bSwitch.setBackground(Color.GRAY);
+		bRouteur.setBackground(Color.GRAY);
+		bHub.setBackground(Color.GRAY);
+		bSousReseau.setBackground(Color.GRAY);
+		bConnexion.setBackground(Color.GRAY);
+
+		this.add(bMachine);
+		this.add(bSwitch);
+		this.add(bRouteur);
+		this.add(bHub);
+		this.add(bSousReseau);
+		this.add(bConnexion);
 
 		this.add(rout); // Test
 
 		this.repaint();
 
-		// ActionListener des diffrents boutons
+		bMachine.addMouseListener(new EcouteBoutonMachine(this));
+		bHub.addMouseListener(new EcouteBoutonHub(this));
+		bSwitch.addMouseListener(new EcouteBoutonSwitch(this));
+		bRouteur.addMouseListener(new EcouteBoutonRouteur(this));
+		bConnexion.addMouseListener(new EcouteBoutonConnexion(this));
+		bSousReseau.addMouseListener(new EcouteBoutonReseau(this));
 
-		//Action Listener
-		
-		
-				ActionListener ordi = new ActionListener() {
-					public void actionPerformed(ActionEvent e) {
-						System.out.println("ordi");
-
-					}
-
-				};
-				ActionListener hub1 = new ActionListener() {
-					public void actionPerformed(ActionEvent e) {
-						System.out.println("hub");
-					}
-
-				};
-				ActionListener switch1 = new ActionListener() {
-					public void actionPerformed(ActionEvent e) {
-						System.out.println("switch");
-
-					}
-
-				};
-				ActionListener routeur = new ActionListener() {
-					public void actionPerformed(ActionEvent e) {
-						System.out.println("routeur");
-
-					}
-
-				};
-				ActionListener connexion = new ActionListener() {
-					public void actionPerformed(ActionEvent e) {
-						System.out.println("connexion");
-
-					}
-
-				};
-
-				ActionListener sousRes = new ActionListener() {
-					public void actionPerformed(ActionEvent e) {
-						System.out.println("sous-reseau");
-					}
-
-				};
-				
-				bMachine.addActionListener(ordi);
-				bHub.addActionListener(hub1);
-				bSwitch.addActionListener(switch1);
-				bRouteur.addActionListener(routeur);
-				bConnexion.addActionListener(connexion);
-				bSousReseau.addActionListener(sousRes);
-				
 		// Afficher Tab ROutage
 		ActionListener routage = new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -106,17 +93,71 @@ public class PanneauBouton extends JPanel {
 			}
 		};
 
-		
 		rout.addActionListener(routage);
 
-		/*
-		 * bouton1.addMouseListener(new EcouteClicBoutonOrdi(this));
-		 * bouton2.addMouseListener(new EcouteClicBoutonHub(this));
-		 * bouton3.addMouseListener(new EcouteClicBoutonSwitch(this));
-		 * bouton4.addMouseListener(new EcouteClicBoutonRouteur(this));
-		 * bouton5.addMouseListener(new EcouteClicBoutonConnexion(this));
-		 * bouton6.addMouseListener(new EcouteClicBoutonSousReseau(this));
-		 */
 	}
 
+	public JButton getbMachine() {
+		return bMachine;
+	}
+
+	public void setbMachine(JButton bMachine) {
+		this.bMachine = bMachine;
+	}
+
+	public boolean isOrdiSelected() {
+		return ordiSelected;
+	}
+
+	public void setOrdiSelected(boolean ordiSelected) {
+		this.ordiSelected = ordiSelected;
+	}
+
+	public boolean isHubSelected() {
+		return hubSelected;
+	}
+
+	public void setHubSelected(boolean hubSelected) {
+		this.hubSelected = hubSelected;
+	}
+
+	public boolean isRouteurSelected() {
+		return routeurSelected;
+	}
+
+	public void setRouteurSelected(boolean routeurSelected) {
+		this.routeurSelected = routeurSelected;
+	}
+
+	public boolean isSwitchSelected() {
+		return switchSelected;
+	}
+
+	public void setSwitchSelected(boolean switchSelected) {
+		this.switchSelected = switchSelected;
+	}
+
+	public boolean isConnectSelected() {
+		return connectSelected;
+	}
+
+	public void setConnectSelected(boolean connectSelected) {
+		this.connectSelected = connectSelected;
+	}
+
+	public boolean isSousReseauSelected() {
+		return sousReseauSelected;
+	}
+
+	public void setSousReseauSelected(boolean sousReseauSelected) {
+		this.sousReseauSelected = sousReseauSelected;
+	}
+
+	public boolean isSimulationSelected() {
+		return simulationSelected;
+	}
+
+	public void setSimulationSelected(boolean simulationSelected) {
+		this.simulationSelected = simulationSelected;
+	}
 }

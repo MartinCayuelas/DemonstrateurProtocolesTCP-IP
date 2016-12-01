@@ -1,5 +1,6 @@
-package modnetwork.Reseau.Adresse;
+package modnetwork.Reseau;
 import java.io.Serializable;
+import java.util.Random;
 
 /**
 *
@@ -45,8 +46,8 @@ public class MAC extends Adresse {
      */
 
     public static String generateOctet() {
-        String s1=decimalToHexa(generateMac.nextInt(15));
-        String s2=decimalToHexa(generateMac.nextInt(15));
+        String s1=decimalToHexa(generateMAC.nextInt(15));
+        String s2=decimalToHexa(generateMAC.nextInt(15));
         return s1+s2;
     }
 
@@ -65,9 +66,9 @@ public class MAC extends Adresse {
                 }
             }
         }
-        else{
+        
         return n+"";
-       }
+      
     }
 
      // Getters

@@ -4,6 +4,11 @@ import java.awt.Color;
 
 import javax.swing.JPanel;
 
+/**
+*
+* @author cayuelasM
+* @author gonzalezR
+*/
 public class PanneauPrincipal extends JPanel {
 
 	/**

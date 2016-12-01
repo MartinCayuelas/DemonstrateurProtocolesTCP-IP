@@ -43,7 +43,12 @@ public class Adresse <T> implements Serializable {
     
     // Getters
     
-    /**
+    private char getSep() {
+		// TODO Auto-generated method stub
+		return this.separateur;
+	}
+
+	/**
      * Renvoie le premier octet d'une adresse
      * @return Le premier octet
      */
@@ -108,20 +113,7 @@ public class Adresse <T> implements Serializable {
         return false;
     }
 
-     /**
-     * Vérifie si un objet est égal à l'adresse MAC courante
-     * @param o L'objet à comparer
-     * @return true si ce sont les mêmes adresses MAC | false sinon
-     */
-    public boolean equals(Object o) {
-        if (super.equals(o)) {
-            MAC m=(MAC)o;
-            if (this.octet5.equals(m.getO5()) && this.octet6.equals(m.getO6())) {
-                return true;
-            }
-        }
-        return false;
-    }
+     
     
     /**
      * Affiche l'adresse

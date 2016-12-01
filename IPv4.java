@@ -1,4 +1,4 @@
-package modnetwork.Reseau.Adresse;
+package modnetwork.Reseau;
  import java.io.Serializable;
 
 /**
@@ -28,7 +28,7 @@ public class IPv4 extends Adresse{
     }  
 
     public String toString(){
-    	super.toString();
+    	return super.toString();
     }  
 
 
