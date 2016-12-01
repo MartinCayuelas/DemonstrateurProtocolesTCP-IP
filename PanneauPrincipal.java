@@ -1,11 +1,11 @@
+package modnetwork.Fenetre;
 import java.awt.BorderLayout;
 import java.awt.Color;
 
 import javax.swing.JPanel;
 
-
 public class PanneauPrincipal extends JPanel {
-	
+
 	/**
 	 * 
 	 */
@@ -15,21 +15,20 @@ public class PanneauPrincipal extends JPanel {
 	 */
 
 	PanneauBouton panB = new PanneauBouton(this);
-	
-	public PanneauPrincipal(){
-        this.setLayout(new BorderLayout(1,1));
-        this.setBackground(Color.WHITE);
-        
-        this.add(panB, BorderLayout.NORTH);
-       // this.add("North",panB);
-        
-       
-       
-    }
-	
-	 public PanneauBouton getPanelBouton(){
-	        return this.panB;
-	    }
-	
-	
+	JPanel pan = new JPanel();
+
+	public PanneauPrincipal() {
+		this.setLayout(new BorderLayout(1, 1));
+		this.setBackground(Color.WHITE);
+		panB.setBackground(Color.WHITE);
+		this.add(panB, BorderLayout.WEST);
+		
+		this.add("North",pan);
+
+	}
+
+	public PanneauBouton getPanelBouton() {
+		return this.panB;
+	}
+
 }
