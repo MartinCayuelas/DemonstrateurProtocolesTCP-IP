@@ -84,7 +84,7 @@ public class PanneauBouton extends JPanel {
 		bSwitch.addMouseListener(new EcouteBoutonSwitch(this));
 		bRouteur.addMouseListener(new EcouteBoutonRouteur(this));
 		bConnexion.addMouseListener(new EcouteBoutonConnexion(this));
-		bSousReseau.addMouseListener(new EcouteBoutonReseau(this));
+		bSousReseau.addMouseListener(new EcouteBoutonSousReseau(this));
 
 		// Afficher Tab ROutage
 		ActionListener routage = new ActionListener() {

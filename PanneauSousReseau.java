@@ -32,4 +32,35 @@ public class PanneauSousReseau extends JPanel{
 		addMouseListener(new EcoutePanneau(this));
 	}
 
+	/**
+	 * @return the sousRes
+	 */
+	public SousReseau getSousRes() {
+		return sousRes;
+	}
+
+	/**
+	 * @param sousRes the sousRes to set
+	 */
+	public void setSousRes(SousReseau sousRes) {
+		this.sousRes = sousRes;
+	}
+
+	/**
+	 * @return the pan
+	 */
+	public PanneauElement getPan() {
+		return pan;
+	}
+
+	/**
+	 * @param pan the pan to set
+	 */
+	public void setPan(PanneauElement pan) {
+		this.pan = pan;
+	}
+	
+	
+	
+
 }

@@ -22,6 +22,8 @@ public class EcoutePanneauPrincipal extends MouseAdapter{
 	
 	 @Override
 	    public void mouseClicked (MouseEvent e){
+		 System.out.println("Pan Principal");
+		 pan.getPanelPrincipal().repaint();
 	        if(this.pan.getPanelPrincipal().getPanneauBouton().isSousReseauSelected()){
 	            Reseau r=new Reseau();
 	            SousReseau s = new SousReseau(r);
