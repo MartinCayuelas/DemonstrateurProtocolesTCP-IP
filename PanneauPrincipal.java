@@ -32,7 +32,7 @@ public class PanneauPrincipal extends JPanel {
 
 	}
 
-	public PanneauBouton getPanelBouton() {
+	public PanneauBouton getPanneauBouton() {
 		return this.panB;
 	}
 

@@ -1,35 +1,27 @@
+package modnetwork.Reseau;
+
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class SousReseau{
-	
-	//variables
-	private ArrayList<ElementSousReseau> elements;
+public class SousReseau implements Serializable {
+	private Reseau res;
+	private IPv4 IPmachiches;
+	/*
+	private ArrayList<Machine> listeMachines;
 
-	//constructeur
-	public SousReseau(){
-		this.elements = new ArrayList<ElementSousReseau>();
-	}
+	private ArrayList<Hub> listeHubs;
+	private ArrayList<Switch> listeSwitchs;*/
 
-	//methodes
-	//getters
-	public ArrayList<ElementSousReseau> getElements(){
-		return this.elements;
-	}
+	public SousReseau(Reseau r) {
+		this.res=r;
+        this.IPmachiches=new IPv4(164,1,10,0);
+        /*
+        this.listeMachines=new ArrayList();
+       
+        this.listeSwitchs=new ArrayList();
+        this.listeHubs=new ArrayList();
+        */
 
-	//setters
-	public void setElements(ArrayList<ElementSousReseau> e){
-		this.elements = e;
-	}
-
-	//autres
-	public void ajoutElement(ElementSousReseau e){
-		if(!this.elements.contains(e)){
-			this.elements.add(e);
-		}
-	}
-
-	public void removeElement(ElementSousReseau e){
-		this.elements.remove(e);
 	}
 
 }

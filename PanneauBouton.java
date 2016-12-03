@@ -8,12 +8,11 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 
-
 /**
-*
-* @author cayuelasM
-* @author gonzalezR
-*/
+ *
+ * @author cayuelasM
+ * @author gonzalezR
+ */
 public class PanneauBouton extends JPanel {
 
 	/**
@@ -24,6 +23,7 @@ public class PanneauBouton extends JPanel {
 	private JButton bMachine = new JButton();
 	private JButton bSwitch = new JButton();
 	private JButton bRouteur = new JButton();
+
 	private JButton bHub = new JButton();
 	private JButton bSousReseau = new JButton();
 	private JButton bConnexion = new JButton();
@@ -160,4 +160,18 @@ public class PanneauBouton extends JPanel {
 	public void setSimulationSelected(boolean simulationSelected) {
 		this.simulationSelected = simulationSelected;
 	}
-}
+	
+	
+	
+	
+	
+	
+	public PanneauPrincipal getPanneau() {
+		return panneau;
+	}
+
+	public void setPanneau(PanneauPrincipal panneau) {
+		this.panneau = panneau;
+	}
+
+	}

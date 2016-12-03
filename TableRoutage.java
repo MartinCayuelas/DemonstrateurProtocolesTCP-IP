@@ -17,11 +17,11 @@ public class TableRoutage {
 	*
 	* Je sais pas si on va en avoir besoin de ça en dessous
 	* A voir
-	*/
+	
     public static final MasqueSousReseau broadcastMasque = new MasqueSousReseau(255,255,255,255);
     public static final MasqueSousReseau sousReseauMasque = new MasqueSousReseau(255,255,255,0);
     public static final MasqueSousReseau defautPasserelleMasque = new MasqueSousReseau(0,0,0,0);
-    
+    */
     /**
     * Crée une nouvelle table de routage
     */
