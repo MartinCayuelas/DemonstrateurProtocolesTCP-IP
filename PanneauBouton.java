@@ -42,7 +42,7 @@ public class PanneauBouton extends JPanel {
 	/**
 	 *
 	 * @param p
-	 *            PanelPrincipal dans lequel est inséré le PanelBouton
+	 *            PanelPrincipal dans lequel est insÃ©rÃ© le PanelBouton
 	 */
 	public PanneauBouton(PanneauPrincipal p) {
 		this.panneau = p;
@@ -60,6 +60,13 @@ public class PanneauBouton extends JPanel {
 		bHub.setIcon(ButtonH);
 		bSousReseau.setIcon(ButtonSR);
 		bConnexion.setIcon(ButtonL);
+		
+		bMachine.setToolTipText("Machine");
+		bSwitch.setToolTipText("Switch");
+		bRouteur.setToolTipText("Routeur");
+		bHub.setToolTipText("Hub");
+		bSousReseau.setToolTipText("Sous Reseau");
+		bConnexion.setToolTipText("Connexion");
 
 		bMachine.setBackground(Color.LIGHT_GRAY);
 		bSwitch.setBackground(Color.LIGHT_GRAY);
