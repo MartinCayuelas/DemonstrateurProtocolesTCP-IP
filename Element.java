@@ -1,40 +1,19 @@
-import java.util.ArrayList;
+package modnetwork.Reseau;
+
 import java.io.Serializable;
+import java.util.ArrayList;
 
-public class Element implements Serializable{
+public abstract class Element implements Serializable {
 
-	//variables
-	private ArrayList<Element> elementsConnectes;
-
-	//constructeur
-	public Element(){
-		this.elementsConnectes = new ArrayList<Element>();
-	}
-
-	//methodes
-	//getters
-
-	public ArrayList<Element> getElementsConnectes(){
-		return this.elementsConnectes
-	}
-
-	//setters
-
-	public void setElementConnectes(ArrayList<Element> l){
-		this.elementsConnectes = l;
-	}
-
-	//autres
-
-	public void ajoutConnection(Element e){
-		if(!this.elementsConnectes.contains(e)){
-			this.elementsConnectes.add(e);
-		}
-	}
-
-	public void removeConnection(Element e){
-		this.elementsConnectes.remove(e);
-	}
-
-
+    private int nbPorts;
+    private ArrayList<Element>elementsConnectes;
+    
+    /**
+     * Crée un nouvel élément
+     * @param nbp Le nombre de ports de l'élément
+     */
+    public Element (int nbp) {
+        this.nbPorts=nbp;
+        this.elementsConnectes=new ArrayList();
+    }
 }

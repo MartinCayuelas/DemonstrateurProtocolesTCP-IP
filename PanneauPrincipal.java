@@ -19,31 +19,40 @@ public class PanneauPrincipal extends JPanel {
 	 * 
 	 */
 
-	PanneauBouton panB = new PanneauBouton(this);
+	PanneauBouton panBut = new PanneauBouton(this);
 	PanneauElement panE = new PanneauElement(this);
-	JPanel pan = new JPanel();
+	JPanel panBas = new JPanel();
+	
+	JPanel panG = new JPanel();
+	JPanel panD = new JPanel();
 
 	public PanneauPrincipal() {
 		this.setLayout(new BorderLayout(1, 1));
 		this.setBackground(Color.WHITE);
-		panB.setBackground(Color.WHITE);
-		panE.setBackground(Color.gray);
+		panBut.setBackground(Color.WHITE);
+		panG.setBackground(Color.WHITE);
+		panD.setBackground(Color.WHITE);
+		panBas.setBackground(Color.WHITE);
+		panE.setBackground(Color.LIGHT_GRAY);
 		/*
 		this.add(panB, BorderLayout.WEST);
 		
 		this.add("North",pan);*/
 		
 		
-		this.add("North", panB);
+		this.add("North", panBut);
 		this.add("Center", panE);
+		this.add("South",panBas);
 		
+		this.add("West",panG);
+		this.add("East", panD);
 		
 	
 
 	}
 
 	public PanneauBouton getPanneauBouton() {
-		return this.panB;
+		return this.panBut;
 	}
 
 }

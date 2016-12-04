@@ -61,12 +61,12 @@ public class PanneauBouton extends JPanel {
 		bSousReseau.setIcon(ButtonSR);
 		bConnexion.setIcon(ButtonL);
 
-		bMachine.setBackground(Color.GRAY);
-		bSwitch.setBackground(Color.GRAY);
-		bRouteur.setBackground(Color.GRAY);
-		bHub.setBackground(Color.GRAY);
-		bSousReseau.setBackground(Color.GRAY);
-		bConnexion.setBackground(Color.GRAY);
+		bMachine.setBackground(Color.LIGHT_GRAY);
+		bSwitch.setBackground(Color.LIGHT_GRAY);
+		bRouteur.setBackground(Color.LIGHT_GRAY);
+		bHub.setBackground(Color.LIGHT_GRAY);
+		bSousReseau.setBackground(Color.LIGHT_GRAY);
+		bConnexion.setBackground(Color.LIGHT_GRAY);
 
 		this.add(bMachine);
 		this.add(bSwitch);
@@ -86,6 +86,17 @@ public class PanneauBouton extends JPanel {
 		bConnexion.addMouseListener(new EcouteBoutonConnexion(this));
 		bSousReseau.addMouseListener(new EcouteBoutonSousReseau(this));
 
+		/*
+		ActionListener adressage = new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				FenetreAdressage adressage = new FenetreAdressage(null);
+				
+			}
+		};
+		
+		bSousReseau.addActionListener(adressage);*/
+		
+		
 		// Afficher Tab ROutage
 		ActionListener routage = new ActionListener() {
 			public void actionPerformed(ActionEvent e) {

@@ -14,7 +14,7 @@ public class FenetreRoutage extends JFrame {
 
 		PanneauTableRoutage rout = new PanneauTableRoutage();
 
-		this.setTitle("Routage");// Apres il y a aura l'adresse Ip de l'element
+		this.setTitle("Table de routage");// Apres il y a aura l'adresse Ip de l'element
 		this.setSize(700, 720);
 
 		this.setResizable(true);

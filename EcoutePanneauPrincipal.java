@@ -1,5 +1,7 @@
 package modnetwork.Fenetre;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
@@ -15,6 +17,7 @@ public class EcoutePanneauPrincipal extends MouseAdapter{
 	
 	private PanneauElement pan;
 	
+	
 	public EcoutePanneauPrincipal(PanneauElement pan){
 		this.pan = pan;
 	}
@@ -27,7 +30,9 @@ public class EcoutePanneauPrincipal extends MouseAdapter{
 	        if(this.pan.getPanelPrincipal().getPanneauBouton().isSousReseauSelected()){
 	            Reseau r=new Reseau();
 	            SousReseau s = new SousReseau(r);
-	            PanneauSousReseau p = new PanneauSousReseau(pan,e.getX(),e.getY(),s);
+	          
+	    		 PanneauSousReseau p = new PanneauSousReseau(pan,e.getX(),e.getY(),s);
+	           
 	            pan.add(p);
 	            pan.repaint();
 	            pan.getPanelPrincipal().getPanneauBouton().setSousReseauSelected(false);

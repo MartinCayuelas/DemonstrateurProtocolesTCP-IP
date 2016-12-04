@@ -1,15 +1,11 @@
 package modnetwork.Fenetre;
-import java.awt.BorderLayout;
-import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
-import javax.swing.JPanel;
 
 
 /**
@@ -76,6 +72,15 @@ public class Fenetre extends JFrame {
 		this.edition.add(hub);
 		this.edition.add(switch1);
 		this.edition.add(sousreseau);
+		
+		/*
+		ActionListener sousR = new ActionListener(){
+			public void actionPerformed(ActionEvent e) {
+				sousReseau.addMouseListener(new EcouteBoutonSousReseau(this));
+
+			}
+		}
+		sousreseau.addActionListener(sousR);*/
 
 		this.analyse.add(trame);
 
