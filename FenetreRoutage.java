@@ -23,7 +23,7 @@ public class FenetreRoutage extends JFrame {
 
 		this.setContentPane(rout);
 
-		this.setBounds(20, 115, 700, 720);
+		this.setBounds(145,125, 700, 710);
 	}
 
 }

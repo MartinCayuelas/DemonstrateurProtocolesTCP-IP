@@ -9,9 +9,10 @@ import javax.swing.JPanel;
 import javax.swing.border.LineBorder;
 import javax.swing.border.TitledBorder;
 
+import modnetwork.Reseau.Hub;
 import modnetwork.Reseau.IPv4;
 import modnetwork.Reseau.Machine;
-import modnetwork.Reseau.SousReseau;
+import modnetwork.Reseau.*;
 
 public class PanneauSousReseau extends JPanel{
 	
@@ -58,7 +59,7 @@ public class PanneauSousReseau extends JPanel{
         System.out.println("Machine Posée");
         Machine m=new Machine(sousRes);
         sousRes.addMachine(m);
-        BoutonMachine Ordi = new BoutonMachine(new ImageIcon("./images/poste.png"),m);
+        BoutonMachine Ordi = new BoutonMachine(new ImageIcon(getClass().getResource("./m.png")),m);
         //Ordi.addMouseListener(new EcouteElement(this,Ordi));
         int xClic=e.getX();
         int yClic=e.getY();
@@ -69,6 +70,50 @@ public class PanneauSousReseau extends JPanel{
         
         System.out.println("Ajouter Ordi Marche");
     }
+    
+    /**
+     *Ajoute un hub au PanelSousReseau
+     * @param e Evènement déclancheur de la fonction.
+     */
+    public void AjouterHub(MouseEvent e){
+        System.out.println("Hub Posé");
+        Hub h =new Hub(sousRes);
+        sousRes.addHub(h);
+        BoutonHub hub = new BoutonHub(new ImageIcon(getClass().getResource("./h.png")),h);
+        //Ordi.addMouseListener(new EcouteElement(this,Ordi));
+        int xClic=e.getX();
+        int yClic=e.getY();
+        hub.setBounds(xClic-25,yClic-25,32,32);
+        hub.setMaximumSize(hub.getPreferredSize());
+        this.add(hub);
+        this.paintComponents(this.getGraphics());
+        
+        System.out.println("Ajouter hub Marche");
+    }
+    
+    
+    /**
+     *Ajoute un Switch au PanelSousReseau
+     * @param e Evènement déclancheur de la fonction.
+     */
+    
+    public void AjouterSwitch(MouseEvent e){
+        System.out.println("Machine Posée");
+        Switch s=new Switch(sousRes);
+        sousRes.addSwitch(s);
+        BoutonSwitch sw = new BoutonSwitch(new ImageIcon(getClass().getResource("./s.png")),s);
+        //Ordi.addMouseListener(new EcouteElement(this,Ordi));
+        int xClic=e.getX();
+        int yClic=e.getY();
+        sw.setBounds(xClic-25,yClic-25,32,32);
+        sw.setMaximumSize(sw.getPreferredSize());
+        this.add(sw);
+        this.paintComponents(this.getGraphics());
+        
+        System.out.println("Ajouter Switch Marche");
+    }
+    
+    
 	/**
 	 * @return the sousRes
 	 */

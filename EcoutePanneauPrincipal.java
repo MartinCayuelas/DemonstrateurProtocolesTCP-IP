@@ -39,9 +39,10 @@ public class EcoutePanneauPrincipal extends MouseAdapter{
 	             System.out.println("Nouveau sous reseau");
 	             }
 	        
-	        /*else if(pan.getPanelPrincipal().getPanneauBouton().getRouteurSelected()){
+	        else if(pan.getPanelPrincipal().getPanneauBouton().isRouteurSelected()){
 	            pan.AjouterRouteur(e);
-	            pan.getPanelPrincipal().getPanelBouton().setRouteurSelected(false);
-	        }*/
+	            pan.getPanelPrincipal().getPanneauBouton().setRouteurSelected(false);
+	        }
+	        
 	        }   
 }

@@ -1,6 +1,7 @@
 package modnetwork.Fenetre;
 import java.awt.Graphics;
 import java.awt.Image;
+import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 
@@ -14,8 +15,9 @@ public class PanneauCorrection extends JPanel {
 	public void paintComponent(Graphics g) {
 		try {
 
-			Image img = ImageIO.read(new File("./images/Correction.png"));
-			g.drawImage(img, 0, 0, 849, 699, this);
+			 BufferedImage myPicture;
+			    myPicture = ImageIO.read(new File("images\\Correction.png"));
+			g.drawImage(myPicture, 0, 0, 849, 699, this);
 
 		} catch (IOException e) {
 

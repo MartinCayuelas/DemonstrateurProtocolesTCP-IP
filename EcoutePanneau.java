@@ -9,23 +9,23 @@ public class EcoutePanneau extends MouseAdapter {
 	public EcoutePanneau(PanneauSousReseau pan) {
 		this.pan = pan;
 	}
-	
-	 @Override
-	    public void mouseClicked (MouseEvent e){
-	        pan.getPan().getPanelPrincipal().repaint();
-	      
-	  
-	        // Ajout des éléments lors d'un clic sur le panel si un des bouton est selectionné
-	        if(pan.getPan().getPanelPrincipal().getPanneauBouton().isOrdiSelected()){
-	            pan.AjouterOrdi(e);
-	            pan.getPan().getPanelPrincipal().getPanneauBouton().setOrdiSelected(false);
-	        }
-	        /*else if(pan.getPanelElements().getPanelPrincipal().getPanelBouton().getHubSelected()){
-	            pan.AjouterHub(e);
-	            pan.getPanelElements().getPanelPrincipal().getPanelBouton().setHubSelected(false);
-	        }else if(pan.getPanelElements().getPanelPrincipal().getPanelBouton().getSwitchSelected()){
-	            pan.AjouterSwitch(e);
-	            pan.getPanelElements().getPanelPrincipal().getPanelBouton().setSwitchSelected(false);
-	        */
-	    }
+
+	@Override
+	public void mouseClicked(MouseEvent e) {
+		pan.getPan().getPanelPrincipal().repaint();
+
+		// Ajout des éléments lors d'un clic sur le panel si un des bouton est
+		// selectionné
+		if (pan.getPan().getPanelPrincipal().getPanneauBouton().isOrdiSelected()) {
+			pan.AjouterOrdi(e);
+			pan.getPan().getPanelPrincipal().getPanneauBouton().setOrdiSelected(false);
+		} else if (pan.getPan().getPanelPrincipal().getPanneauBouton().isHubSelected()) {
+			pan.AjouterHub(e);
+			pan.getPan().getPanelPrincipal().getPanneauBouton().setHubSelected(false);
+		} else if (pan.getPan().getPanelPrincipal().getPanneauBouton().isSwitchSelected()) {
+			pan.AjouterSwitch(e);
+			pan.getPan().getPanelPrincipal().getPanneauBouton().setSwitchSelected(false);
+
+		}
+	}
 }

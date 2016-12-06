@@ -36,23 +36,24 @@ public class PanneauBouton extends JPanel {
 	private boolean simulationSelected = false;
 
 	private final JButton rout = new JButton("routage");// Test
+	private final JButton adr = new JButton("adre");// Test
 
 	private PanneauPrincipal panneau;
 
 	/**
 	 *
 	 * @param p
-	 *            PanelPrincipal dans lequel est insÃ©rÃ© le PanelBouton
+	 *            PanelPrincipal dans lequel est inséré le PanelBouton
 	 */
 	public PanneauBouton(PanneauPrincipal p) {
 		this.panneau = p;
 
-		ImageIcon ButtonM = new ImageIcon("./images/poste.png");
-		ImageIcon ButtonS = new ImageIcon("./images/switch.png");
-		ImageIcon ButtonR = new ImageIcon("./images/routeur.png");
-		ImageIcon ButtonH = new ImageIcon("./images/HUB.png");
-		ImageIcon ButtonL = new ImageIcon("./images/liaison.png");
-		ImageIcon ButtonSR = new ImageIcon("./images/sousR.png");
+		ImageIcon ButtonM = new ImageIcon(getClass().getResource("./poste.png"));
+		ImageIcon ButtonS = new ImageIcon(getClass().getResource("./switch.png"));
+		ImageIcon ButtonR = new ImageIcon(getClass().getResource("./routeur.png"));
+		ImageIcon ButtonH = new ImageIcon(getClass().getResource("./HUB.png"));
+		ImageIcon ButtonL = new ImageIcon(getClass().getResource("./liaison.png"));
+		ImageIcon ButtonSR = new ImageIcon(getClass().getResource("./sousR.png"));
 
 		bMachine.setIcon(ButtonM);
 		bSwitch.setIcon(ButtonS);
@@ -83,6 +84,7 @@ public class PanneauBouton extends JPanel {
 		this.add(bConnexion);
 
 		this.add(rout); // Test
+		this.add(adr);
 
 		this.repaint();
 
@@ -112,8 +114,21 @@ public class PanneauBouton extends JPanel {
 		};
 
 		rout.addActionListener(routage);
+		
+		// Afficher Adressage
+					ActionListener adre = new ActionListener() {
+						public void actionPerformed(ActionEvent e) {
+							FenetreAdressage adre = new FenetreAdressage();
+						}
+					};
+
+					adr.addActionListener(adre);
+
 
 	}
+	
+	
+		
 
 	public JButton getbMachine() {
 		return bMachine;

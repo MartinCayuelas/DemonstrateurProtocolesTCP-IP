@@ -1,8 +1,12 @@
 package modnetwork.Fenetre;
 import java.awt.Color;
+
 import java.awt.Dimension;
 
+import javax.swing.JLabel;
 import javax.swing.JPanel;
+
+import modnetwork.Reseau.*;
 
 /**
 *
@@ -23,6 +27,12 @@ public class PanneauTableRoutage extends JPanel {
 		Dimension d = new Dimension(500, 1200);
 		this.setBackground(new Color(238, 234, 232));
 		this.setPreferredSize(d);
+		
+		JLabel label = new JLabel("Adresse destinataire | Masque sous-reseau | Adresse Passerelle");
+		
+		
+		this.add(label);
+		
 
 	}
 
