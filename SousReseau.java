@@ -1,62 +1,128 @@
-//package modnetwork.Reseau;
+package modnetwork.Reseau;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Random;
 
 public class SousReseau implements Serializable {
-	
-	//variables
 	private Reseau res;
 	private IPv4 IPmachines;
-	private ArrayList<ElementSousReseau> listeElements;
+	private static int octet2 = 40;
+	private int octet3 = new Random().nextInt(15);
+	
+	
+	private ArrayList<Machine> listeMachines;
+	
+	private ArrayList<Hub> listeHubs;
+	private ArrayList<Switch> listeSwitchs;
 
-	//constructeur
+	
+
 	public SousReseau(Reseau r) {
 		this.res=r;
-        this.IPmachines=new IPv4(164,1,10,0);
-        this.listeElements = new ArrayList<ElementSousReseau>();
+		
+        this.IPmachines= new IPv4(158,octet2,octet3,0);
+        
+        this.octet2++;
+        
+        
+        
+        this.listeMachines=new ArrayList<Machine>();
+        
+        this.listeSwitchs=new ArrayList<Switch>();
+        this.listeHubs=new ArrayList<Hub>();
+        
+
+	}
+	
+	public String toString() {
+		return "SousReseau\n" + this.getIPmachines();
 	}
 
-	//methodes
-	//getters
-	public Reseau getReseau(){
-		return this.res;
+	/**
+	 * @return the listeMachines
+	 */
+	public ArrayList<Machine> getListeMachines() {
+		return listeMachines;
 	}
 
-	public IPv getIPmachines(){
-		return this.IPmachines;
+
+	/**
+	 * @param listeMachines the listeMachines to set
+	 */
+	public void setListeMachines(ArrayList<Machine> listeMachines) {
+		this.listeMachines = listeMachines;
 	}
 
-	public ArrayList<ElementSousReseau> getElements(){
-		return this.listeElements;
+
+	/**
+	 * @return the listeHubs
+	 */
+	public ArrayList<Hub> getListeHubs() {
+		return listeHubs;
 	}
 
-	//setters
-	public void setReseau(Reseau r){
-		this.res = r;
+
+	/**
+	 * @param listeHubs the listeHubs to set
+	 */
+	public void setListeHubs(ArrayList<Hub> listeHubs) {
+		this.listeHubs = listeHubs;
 	}
 
-	public void setIPmachines(IPv4 ip){
-		this.IPmachines = ip;
+
+	/**
+	 * @return the listeSwitchs
+	 */
+	public ArrayList<Switch> getListeSwitchs() {
+		return listeSwitchs;
 	}
 
-	public void setElements(ArrayList<ElementSousReseau> l){
-		this.listeElements = l;
+
+	/**
+	 * @param listeSwitchs the listeSwitchs to set
+	 */
+	public void setListeSwitchs(ArrayList<Switch> listeSwitchs) {
+		this.listeSwitchs = listeSwitchs;
 	}
 
-	//autres
-	public boolean contientElement(ElementSousReseau e){
-		return this.listeElements.contains(e);
+
+	/**
+	 * @return the iPmachiches
+	 */
+	public IPv4 getIPmachines() {
+		return IPmachines;
 	}
 
-	public void ajoutElement(ElementSousReseau e){
-		if (!this.contientElement(e)){
-			this.listeElements.add(e);
-		}
+	/**
+	 * @param iPmachiches the iPmachiches to set
+	 */
+	public void setIPmachiches(IPv4 iPmachiches) {
+		IPmachines = iPmachiches;
 	}
 
-	public void removeElement(Element e){
-		this.listeElements.remove(e);
-	}
-
+// Setters
+    
+    /**
+     * Ajoute une machine au sous-réseau
+     * @param m La machine à ajouter
+     */
+    public void addMachine(Machine m) {
+        this.listeMachines.add(m);
+    }
+    /**
+     * Ajoute un switch au sous-réseau
+     * @param s Le switch à ajouter
+     */    
+    public void addSwitch(Switch s) {
+        this.listeSwitchs.add(s);
+    }
+    
+    /**
+     * Ajoute un hub au sous-réseau
+     * @param h Le hub à ajouter
+     */    
+    public void addHub(Hub h) {
+        this.listeHubs.add(h);
+    }
 }

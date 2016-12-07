@@ -1,35 +1,27 @@
-public class ElementSousReseau extends Element{
-	
-	//variables
-	private SousReseau sousReseau;
-	private CarteReseau carteReseau;
+package modnetwork.Reseau;
 
-	//constructeur
-	public ElementSousReseau(SousReseau s){
-		super();
-		this.sousReseau = s;
-		this.carteReseau = c;
-	}
+import java.io.Serializable;
 
-	//methodes
-	//getters
-	public SousReseau getSousReseau(){
-		return this.sousReseau;
-	}
-
-	public CarteReseau getCarteReseau(){
-		return this.carteReseau;
-	}
-
-	//setters
-	public void setSousReseau(SousReseau s){
-		this.sousReseau = s;
-	}
-
-	public void setCarteReseau(CarteReseau c){
-		this.carteReseau = c;
-	}
-
-
-
+public class ElementSousReseau extends Element implements Serializable {
+    private SousReseau sousReseau;
+    
+    /**
+     * Crée un nouvel élément
+     * @param nbp Le nombre de ports de l'élément
+     */
+    public ElementSousReseau (int nbp, SousReseau sr) {
+        super(nbp);
+        this.sousReseau=sr;
+    }
+    
+    // Getters
+    
+    /**
+     * Renvoie le sous-réseau dans lequel se trouve l'élément courant
+     * @return Le sous-réseau 
+     */
+    public SousReseau getSousReseau() {
+        return this.sousReseau;
+    }
+    
 }

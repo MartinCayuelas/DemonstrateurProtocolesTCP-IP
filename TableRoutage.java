@@ -26,7 +26,7 @@ public class TableRoutage {
     * Crée une nouvelle table de routage
     */
    public TableRoutage () {
-       this.listeregles=new ArrayList();
+       this.listeregles=new ArrayList<Regle>();
    }
 
    /**

@@ -25,7 +25,6 @@ public class FenetreAdressage extends JFrame {
 	private JTextField o1 = new JTextField();
 	private JTextField o2 = new JTextField();
 	private JTextField o3 = new JTextField();
-	
 
 	public FenetreAdressage() {
 
@@ -44,10 +43,10 @@ public class FenetreAdressage extends JFrame {
 		combo.setPreferredSize(new Dimension(100, 20));
 
 		JPanel top = new JPanel();
-		
+
 		container.add(top, BorderLayout.NORTH);
 		top.add(label);
-		
+
 		combo.setPreferredSize(new Dimension(100, 20));
 
 		combo.addItem("A");
@@ -57,57 +56,50 @@ public class FenetreAdressage extends JFrame {
 		combo.addItem("C");
 
 		combo.addItem("D");
-		
+
 		top.add(combo);
 		JPanel center = new JPanel();
 		container.add(center, BorderLayout.CENTER);
 		center.setLayout(new FlowLayout());
-		
-		 JLabel l4 = new JLabel("@ ");
-		 center.add(l4);
+
+		JLabel l4 = new JLabel("@ ");
+		center.add(l4);
 		o1.setColumns(3);
 		o2.setColumns(3);
 		o3.setColumns(2);
-		
+
 		center.add(o1);
 		JLabel l = new JLabel(".");
 		center.add(l);
 		center.add(o2);
-	       JLabel l2 = new JLabel(".");
-	       center.add(l2);
-	       center.add(o3);
-	       JLabel l3 = new JLabel(". 0");
-	       center.add(l3);
-		
-		
-		
-		
-
-		
+		JLabel l2 = new JLabel(".");
+		center.add(l2);
+		center.add(o3);
+		JLabel l3 = new JLabel(". 0");
+		center.add(l3);
 
 		this.setContentPane(container);
 
 		this.setVisible(true);
 
-		
 		JPanel south = new JPanel();
 		container.add(south, BorderLayout.SOUTH);
-		
+
 		JButton okBouton = new JButton("Enregistrer");
 
-	    okBouton.addActionListener(new ActionListener(){
+		okBouton.addActionListener(new ActionListener() {
 
-	      public void actionPerformed(ActionEvent arg0) {        
-	      
-	        System.out.println("Envoyé");
-	        
-	        setVisible(false);
-	      }
+			public void actionPerformed(ActionEvent arg0) {
 
-	    });
-	    
-	   south.add(okBouton);
-	  
+				System.out.println("Envoyé");
+
+				setVisible(false);
+			}
+
+		});
+
+		south.add(okBouton);
+
 	}
 
 }
