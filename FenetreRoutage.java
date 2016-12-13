@@ -9,21 +9,39 @@ import javax.swing.JLabel;
 
 public class FenetreRoutage extends JFrame {
 
-	// Element e sera dedans
+	private PanneauTableRoutage pan;
+	
 	public FenetreRoutage() {
 
 		PanneauTableRoutage rout = new PanneauTableRoutage();
+		this.pan = rout;
 
-		this.setTitle("Table de routage");// Apres il y a aura l'adresse Ip de l'element
-		this.setSize(700, 720);
+		this.setTitle("Table de routage");
+		this.setSize(300, 300);
 
-		this.setResizable(true);
+		this.setResizable(false);
 		this.setLocationRelativeTo(null);
 		this.setVisible(true);
 
 		this.setContentPane(rout);
 
-		this.setBounds(145,125, 700, 710);
+		this.setBounds(145,250, 500, 400);
 	}
+
+	/**
+	 * @return the pan
+	 */
+	public PanneauTableRoutage getPan() {
+		return pan;
+	}
+
+	/**
+	 * @param pan the pan to set
+	 */
+	public void setPan(PanneauTableRoutage pan) {
+		this.pan = pan;
+	}
+	
+	
 
 }

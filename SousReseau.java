@@ -16,12 +16,12 @@ public class SousReseau implements Serializable {
 	private ArrayList<Hub> listeHubs;
 	private ArrayList<Switch> listeSwitchs;
 
-	
+	private ArrayList<Connexion> listConnexions;
 
 	public SousReseau(Reseau r) {
 		this.res=r;
 		
-        this.IPmachines= new IPv4(158,octet2,octet3,0);
+        this.IPmachines= new IPv4(195,octet2,octet3,0);
         
         this.octet2++;
         
@@ -31,6 +31,8 @@ public class SousReseau implements Serializable {
         
         this.listeSwitchs=new ArrayList<Switch>();
         this.listeHubs=new ArrayList<Hub>();
+        
+        this.listConnexions=new ArrayList<Connexion>();
         
 
 	}
@@ -101,9 +103,24 @@ public class SousReseau implements Serializable {
 		IPmachines = iPmachiches;
 	}
 
+	
 // Setters
     
     /**
+	 * @return the listConnexions
+	 */
+	public ArrayList<Connexion> getListConnexions() {
+		return listConnexions;
+	}
+
+	/**
+	 * @param listConnexions the listConnexions to set
+	 */
+	public void setListConnexions(ArrayList<Connexion> listConnexions) {
+		this.listConnexions = listConnexions;
+	}
+
+	/**
      * Ajoute une machine au sous-réseau
      * @param m La machine à ajouter
      */
@@ -124,5 +141,9 @@ public class SousReseau implements Serializable {
      */    
     public void addHub(Hub h) {
         this.listeHubs.add(h);
+    }
+    
+    public void addConnexion(Connexion c){
+    	this.listConnexions.add(c);
     }
 }

@@ -10,6 +10,10 @@ import modnetwork.Reseau.Routeur;
 
 public class PanneauElement extends JPanel{
 	private PanneauPrincipal pan;
+	
+	
+	
+	
 	  /**
      * Créé un nouveau PanelElement
      * @param p PanelPrincipal dans lequel est inséré le PanelElement
@@ -36,14 +40,28 @@ public class PanneauElement extends JPanel{
         System.out.println("Routeur posé");
         Routeur r=new Routeur();
         BoutonRouteur root = new BoutonRouteur(new ImageIcon(getClass().getResource("./r.png")),r);
-       // root.addMouseListener(new EcouteClicElementRouteur(this,root));
+        root.addMouseListener(new EcouteRouteur(this,root));
         int xClic=e.getX();
         int yClic=e.getY();
-        root.setBounds(xClic-25,yClic-25,32,32);
+        root.setBounds(xClic-25,yClic-25,40,40);
         root.setMaximumSize(root.getPreferredSize());
         this.add(root);
         
         this.paintComponents(this.getGraphics());
         
     }
+	/**
+	 * @return the pan
+	 */
+	public PanneauPrincipal getPan() {
+		return pan;
+	}
+	/**
+	 * @param pan the pan to set
+	 */
+	public void setPan(PanneauPrincipal pan) {
+		this.pan = pan;
+	}
+	
+    
 }

@@ -45,5 +45,13 @@ public abstract class Element implements Serializable {
 		this.elementsConnectes = elementsConnectes;
 	}
     
+	  /**
+     * Ajoute une connexion entre l'élément courant et l'élément passé en paramètre
+     * @param e L'élément à connecter à l'élément courant
+     */
+    public void addConnexion(Element e) {
+        this.elementsConnectes.add(e);
+    }
+    
     
 }

@@ -28,7 +28,7 @@ public class EcoutePanneauPrincipal extends MouseAdapter{
 		 System.out.println("Pan Principal");
 		 pan.getPanelPrincipal().repaint();
 	        if(this.pan.getPanelPrincipal().getPanneauBouton().isSousReseauSelected()){
-	            Reseau r=new Reseau();
+	            Reseau r=new Reseau("Reseau 1");
 	            SousReseau s = new SousReseau(r);
 	          
 	    		 PanneauSousReseau p = new PanneauSousReseau(pan,e.getX(),e.getY(),s);
@@ -41,6 +41,7 @@ public class EcoutePanneauPrincipal extends MouseAdapter{
 	        
 	        else if(pan.getPanelPrincipal().getPanneauBouton().isRouteurSelected()){
 	            pan.AjouterRouteur(e);
+	            System.out.println("Nouveau Routeur");
 	            pan.getPanelPrincipal().getPanneauBouton().setRouteurSelected(false);
 	        }
 	        

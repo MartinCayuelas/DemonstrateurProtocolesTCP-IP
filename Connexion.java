@@ -1,41 +1,31 @@
+package modnetwork.Reseau;
+
 import java.io.Serializable;
 
-public class Connexion implements Serializable{
-	
-	//variable
-	private Element element1;
-	private Element element2;
-
-	//constructeur
-	public Connexion(Element e1, Element e2){
-		this.element1 = e1;
-		this.element2 = e2;
-	}
-
-	//methodes
-	//getters
-	public Element getElement1(){
-		return this.element1;
-	}
-
-	public Element getElement2(){
-		return this.element2;
-	}
-
-	//setters
-	public void setElement2(Element e){
-		this.element2 = e;
-	}
-
-	public void setElement1(Element e){
-		this.element1 = e;
-	}
-
-	//autres
-	public void removeConnection(){
-		this.element1.removeConnection(this.element2);
-		this.element2.removeConnection(this.element1);
-	}
-
-	
+public class Connexion implements Serializable {
+    private Element elem1;
+    private Element elem2;
+    
+    /**
+     * Crée une nouvelle connexion, si cela est possible, entre deux éléments quelconques
+     * @param e1 Le premier élément à connecter
+     * @param e2 Le second élément à connecter
+     * @throws InvalidConnexionException Une exception si le nombre de ports ne le permet pas
+     */
+    public Connexion (Element e1, Element e2){
+       
+                this.elem1=e1;
+                this.elem2=e2;
+                e1.addConnexion(e2);
+                e2.addConnexion(e1);
+                
+    }
+    
+    /**
+     * Le toString() d'une connexion
+     * @return Une description de la connexion courante
+     */
+    public String toString() {
+        return elem1.toString() + " connecté à " + elem2.toString();
+    }
 }

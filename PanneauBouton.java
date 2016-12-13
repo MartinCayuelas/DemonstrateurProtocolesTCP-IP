@@ -35,9 +35,9 @@ public class PanneauBouton extends JPanel {
 	private boolean sousReseauSelected = false;
 	private boolean simulationSelected = false;
 
-	private final JButton rout = new JButton("routage");// Test
-	private final JButton adr = new JButton("adre");// Test
-
+	
+	private final JButton adr = new JButton("adressage");// Test
+	private final JButton adrM = new JButton("adressageMachine");// Test
 	private PanneauPrincipal panneau;
 
 	/**
@@ -83,8 +83,10 @@ public class PanneauBouton extends JPanel {
 		this.add(bSousReseau);
 		this.add(bConnexion);
 
-		this.add(rout); // Test
+		
+		/*Test*/
 		this.add(adr);
+		this.add(adrM);
 
 		this.repaint();
 
@@ -105,16 +107,7 @@ public class PanneauBouton extends JPanel {
 		
 		bSousReseau.addActionListener(adressage);*/
 		
-		
-		// Afficher Tab ROutage
-		ActionListener routage = new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				FenetreRoutage rout = new FenetreRoutage();
-			}
-		};
-
-		rout.addActionListener(routage);
-		
+	
 		// Afficher Adressage
 					ActionListener adre = new ActionListener() {
 						public void actionPerformed(ActionEvent e) {
@@ -123,6 +116,15 @@ public class PanneauBouton extends JPanel {
 					};
 
 					adr.addActionListener(adre);
+					// Afficher Adressage
+					ActionListener adreM = new ActionListener() {
+						public void actionPerformed(ActionEvent e) {
+							FenetreAdressageMachine adreM = new FenetreAdressageMachine();
+						}
+					};
+
+					adrM.addActionListener(adreM);
+
 
 
 	}

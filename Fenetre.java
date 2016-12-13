@@ -73,14 +73,8 @@ public class Fenetre extends JFrame {
 		this.edition.add(switch1);
 		this.edition.add(sousreseau);
 		
-		/*
-		ActionListener sousR = new ActionListener(){
-			public void actionPerformed(ActionEvent e) {
-				sousReseau.addMouseListener(new EcouteBoutonSousReseau(this));
-
-			}
-		}
-		sousreseau.addActionListener(sousR);*/
+		
+		
 
 		this.analyse.add(trame);
 

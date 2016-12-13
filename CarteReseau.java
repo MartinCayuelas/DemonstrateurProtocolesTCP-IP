@@ -45,8 +45,33 @@ public class CarteReseau implements Serializable {
             return this.tabRoutage;
         }
 
+        
+       
 
-         /**
+		/**
+		 * @param addresseIP the addresseIP to set
+		 */
+		public void setIP(IPv4 addresseIP) {
+			this.addresseIP = addresseIP;
+		}
+
+		
+		/**
+		 * @param addresseMAC the addresseMAC to set
+		 */
+		public void setAddresseMAC(MAC addresseMAC) {
+			this.addresseMAC = addresseMAC;
+		}
+
+		
+		/**
+		 * @param tabRoutage the tabRoutage to set
+		 */
+		public void setTabRoutage(TableRoutage tabRoutage) {
+			this.tabRoutage = tabRoutage;
+		}
+
+		/**
          * Le toString de la classe
          * @return Affichage du couple
          */
