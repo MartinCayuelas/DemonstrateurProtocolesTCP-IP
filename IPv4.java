@@ -30,6 +30,38 @@ public class IPv4 extends Adresse{
     public String toString(){
     	return super.toString();
     }  
+    
+    /**
+     * Renvoie le premier octet d'une adresse
+     * @return Le premier octet
+     */
+    public int getO1() {
+        return (Integer) this.octet1;
+    }
+    
+    /**
+     * Renvoie le second octet d'une adresse
+     * @return Le second octet
+     */
+    public int getO2() {
+        return (Integer) this.octet2;
+    }
+
+    /**
+     * Renvoie le troisième octet d'une adresse
+     * @return Le troisième octet
+     */
+    public int getO3() {
+        return (Integer) this.octet3;
+    }
+    
+    /**
+     * Renvoie le quatrième octet d'une adresse
+     * @return Le quatrième octet
+     */
+    public int getO4() {
+        return (Integer) this.octet4;
+    }
 
 
 }

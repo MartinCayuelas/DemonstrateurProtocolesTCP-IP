@@ -7,11 +7,11 @@ import java.io.Serializable;
  * @author CayuelasM
  */
 public class Adresse <T> implements Serializable {
-    private char separateur;
-    private T octet1;
-    private T octet2;
-    private T octet3;
-    private T octet4;
+    protected char separateur;
+    protected T octet1;
+    protected T octet2;
+    protected T octet3;
+    protected T octet4;
     
     /**
      * Crée une nouvelle adresse (IPv4, sous-réseau ou MAC)
@@ -35,10 +35,10 @@ public class Adresse <T> implements Serializable {
      */
     public Adresse (Adresse a) {
         this.separateur=a.getSep();
-        this.octet1=(T)a.getO1();
-        this.octet2=(T)a.getO2();
-        this.octet3=(T)a.getO3();
-        this.octet4=(T)a.getO4();
+        this.octet1= (T)a.octet1;
+        this.octet2= (T)a.octet2;
+        this.octet3= (T)a.octet3;
+        this.octet4= (T)a.octet4;
     }
     
     // Getters
@@ -47,38 +47,6 @@ public class Adresse <T> implements Serializable {
 		// TODO Auto-generated method stub
 		return this.separateur;
 	}
-
-	/**
-     * Renvoie le premier octet d'une adresse
-     * @return Le premier octet
-     */
-    public T getO1() {
-        return this.octet1;
-    }
-    
-    /**
-     * Renvoie le second octet d'une adresse
-     * @return Le second octet
-     */
-    public T getO2() {
-        return this.octet2;
-    }
-
-    /**
-     * Renvoie le troisième octet d'une adresse
-     * @return Le troisième octet
-     */
-    public T getO3() {
-        return this.octet3;
-    }
-    
-    /**
-     * Renvoie le quatrième octet d'une adresse
-     * @return Le quatrième octet
-     */
-    public T getO4() {
-        return this.octet4;
-    }
     
     // Setters
     
@@ -106,7 +74,7 @@ public class Adresse <T> implements Serializable {
     public boolean equals(Object o) {
         if (o instanceof Adresse) {
             Adresse a = (Adresse)o;
-            if (this.octet1.equals(a.getO1()) && this.octet2.equals(a.getO2()) && this.octet3.equals(a.getO3()) && this.octet4.equals(a.getO4())) {
+            if (this.octet1.equals(a.octet1) && this.octet2.equals(a.octet2) && this.octet3.equals(a.octet3) && this.octet4.equals(a.octet4)) {
                 return true;
             }
         }

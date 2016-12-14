@@ -74,6 +74,38 @@ public class MAC extends Adresse {
      // Getters
     
     /**
+     * Renvoie le premier octet d'une adresse
+     * @return Le premier octet
+     */
+    public String getO1() {
+        return (String) this.octet1;
+    }
+    
+    /**
+     * Renvoie le second octet d'une adresse
+     * @return Le second octet
+     */
+    public String getO2() {
+        return (String) this.octet2;
+    }
+
+    /**
+     * Renvoie le troisième octet d'une adresse
+     * @return Le troisième octet
+     */
+    public String getO3() {
+        return (String) this.octet3;
+    }
+    
+    /**
+     * Renvoie le quatrième octet d'une adresse
+     * @return Le quatrième octet
+     */
+    public String getO4() {
+        return (String) this.octet4;
+    }
+    
+    /**
      * Renvoie le cinquième octet d'une adresse
      * @return Le cinquième octet
      */
