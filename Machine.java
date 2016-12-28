@@ -42,5 +42,9 @@ public class Machine extends ElementSousReseau implements Serializable {
 	public String toString() {
 		return "Machine\n" + this.getCarteReseau();
 	}
+
+	public void setIP(IPv4 ip){
+		this.carteReseau.setIP(ip);
+	}
     
 }

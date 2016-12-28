@@ -61,4 +61,8 @@ public class Hub extends ElementSousReseau implements Serializable {
 		this.carteReseau = carteReseau;
 	}
 
+	public void setIP(IPv4 ip){
+		this.carteReseau.setIP(ip);
+	}
+
 }

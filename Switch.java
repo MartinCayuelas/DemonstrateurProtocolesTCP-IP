@@ -61,6 +61,10 @@ public class Switch extends ElementSousReseau implements Serializable {
 	public void setCarteReseau(CarteReseau carteReseau) {
 		this.carteReseau = carteReseau;
 	}
+
+	public void setIP(IPv4 ip){
+		this.carteReseau.setIP(ip);
+	}
 	
 	
 
