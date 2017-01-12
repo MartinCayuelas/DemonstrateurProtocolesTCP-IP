@@ -36,8 +36,7 @@ public class PanneauBouton extends JPanel {
 	private boolean simulationSelected = false;
 
 	
-	private final JButton adr = new JButton("adressage");// Test
-	private final JButton adrM = new JButton("adressageMachine");// Test
+	
 	private PanneauPrincipal panneau;
 
 	/**
@@ -84,9 +83,7 @@ public class PanneauBouton extends JPanel {
 		this.add(bConnexion);
 
 		
-		/*Test*/
-		this.add(adr);
-		this.add(adrM);
+		
 
 		this.repaint();
 
@@ -97,33 +94,7 @@ public class PanneauBouton extends JPanel {
 		bConnexion.addMouseListener(new EcouteBoutonConnexion(this));
 		bSousReseau.addMouseListener(new EcouteBoutonSousReseau(this));
 
-		/*
-		ActionListener adressage = new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				FenetreAdressage adressage = new FenetreAdressage(null);
-				
-			}
-		};
 		
-		bSousReseau.addActionListener(adressage);*/
-		
-	
-		// Afficher Adressage
-					ActionListener adre = new ActionListener() {
-						public void actionPerformed(ActionEvent e) {
-							FenetreAdressage adre = new FenetreAdressage();
-						}
-					};
-
-					adr.addActionListener(adre);
-					// Afficher Adressage
-					ActionListener adreM = new ActionListener() {
-						public void actionPerformed(ActionEvent e) {
-							FenetreAdressageMachine adreM = new FenetreAdressageMachine();
-						}
-					};
-
-					adrM.addActionListener(adreM);
 
 
 

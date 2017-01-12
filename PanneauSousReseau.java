@@ -2,16 +2,19 @@ package modnetwork.Fenetre;
 
 import java.awt.Color;
 import java.awt.Dimension;
-import java.awt.Graphics;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 
 import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JFormattedTextField;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.border.LineBorder;
 import javax.swing.border.TitledBorder;
 
-import modnetwork.Reseau.Connexion;
-import modnetwork.Reseau.Element;
 import modnetwork.Reseau.Hub;
 import modnetwork.Reseau.IPv4;
 import modnetwork.Reseau.Machine;
@@ -102,7 +105,7 @@ public class PanneauSousReseau extends JPanel {
 		// creation de la machine
 		System.out.println("Creation de la machine");
 		final Machine m = new Machine(sousRes);
-		sousRes.addMachine(m);
+		this.sousRes.addMachine(m);
 		// Action du bouton
 		bouton.addActionListener(new ActionListener() {
 
@@ -126,7 +129,7 @@ public class PanneauSousReseau extends JPanel {
 
 		BoutonMachine Ordi = new BoutonMachine(new ImageIcon(getClass()
 				.getResource("./m.png")), m);
-		// Ordi.addMouseListener(new EcouteElement(this,Ordi));
+		Ordi.addMouseListener(new EcouteElement(this,Ordi));
 		int xClic = e.getX();
 		int yClic = e.getY();
 		Ordi.setBounds(xClic - 25, yClic - 25, 32, 32);
@@ -168,7 +171,7 @@ public class PanneauSousReseau extends JPanel {
 		jtf2.setPreferredSize(new Dimension(50, 30));
 		jtf3.setPreferredSize(new Dimension(50, 30));
 		jtf4.setPreferredSize(new Dimension(50, 30));
-		JButton bouton = new JButton("Creation de la machine");
+		JButton bouton = new JButton("Creation hub");
 
 		// ajout des elements au panel
 		panneau.add(new JLabel("Adresse IP"));
@@ -180,7 +183,7 @@ public class PanneauSousReseau extends JPanel {
 		fenetre.setContentPane(panneau);
 		// FIN CREATION FENETRE
 
-		System.out.println("Hub Posï¿½");
+		System.out.println("Hub Posé");
 		final Hub h = new Hub(sousRes);
 		sousRes.addHub(h);
 		// action du bouton
@@ -197,7 +200,7 @@ public class PanneauSousReseau extends JPanel {
 				if (o1 != 0 | o2 != 0 | o3 != 0 | o4 != 0) {
 					IPv4 ip = new IPv4(o1, o2, o3, o4);
 					h.setIP(ip);
-					System.out.println("Machine parametree");
+					System.out.println("Hub parametré");
 				}
 				System.out.println(h);
 				fenetre.dispose();
@@ -206,7 +209,7 @@ public class PanneauSousReseau extends JPanel {
 
 		BoutonHub hub = new BoutonHub(new ImageIcon(getClass().getResource(
 				"./h.png")), h);
-		// Ordi.addMouseListener(new EcouteElement(this,Ordi));
+		hub.addMouseListener(new EcouteElement(this,hub));
 		int xClic = e.getX();
 		int yClic = e.getY();
 		hub.setBounds(xClic - 25, yClic - 25, 32, 32);
@@ -214,7 +217,7 @@ public class PanneauSousReseau extends JPanel {
 		this.add(hub);
 		this.paintComponents(this.getGraphics());
 
-		System.out.println("Hub ajoute");
+		System.out.println("Hub ajouté");
 	}
 
 	/**
@@ -228,7 +231,7 @@ public class PanneauSousReseau extends JPanel {
 		// CREATION FENETRE
 		// informations fenetre
 		final JFrame fenetre = new JFrame();
-		fenetre.setTitle("Initialiser une machine");
+		fenetre.setTitle("Initialiser un Switch");
 		fenetre.setSize(400, 200);
 		fenetre.setLocationRelativeTo(null);
 		fenetre.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -248,7 +251,7 @@ public class PanneauSousReseau extends JPanel {
 		jtf2.setPreferredSize(new Dimension(50, 30));
 		jtf3.setPreferredSize(new Dimension(50, 30));
 		jtf4.setPreferredSize(new Dimension(50, 30));
-		JButton bouton = new JButton("Creation de la machine");
+		JButton bouton = new JButton("Creation du switch");
 
 		// ajout des elements au panel
 		panneau.add(new JLabel("Adresse IP"));
@@ -277,7 +280,7 @@ public class PanneauSousReseau extends JPanel {
 				if (o1 != 0 | o2 != 0 | o3 != 0 | o4 != 0) {
 					IPv4 ip = new IPv4(o1, o2, o3, o4);
 					s.setIP(ip);
-					System.out.println("Machine parametree");
+					System.out.println("Switch parametré");
 				}
 				System.out.println(s);
 				fenetre.dispose();
@@ -286,7 +289,7 @@ public class PanneauSousReseau extends JPanel {
 
 		BoutonSwitch sw = new BoutonSwitch(new ImageIcon(getClass()
 				.getResource("./s.png")), s);
-		// Ordi.addMouseListener(new EcouteElement(this,Ordi));
+		sw.addMouseListener(new EcouteElement(this,sw));
 		int xClic = e.getX();
 		int yClic = e.getY();
 		sw.setBounds(xClic - 25, yClic - 25, 32, 32);

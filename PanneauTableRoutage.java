@@ -33,6 +33,7 @@ public class PanneauTableRoutage extends JPanel {
 	       pan2 = new PanelInfos(this);
 	        
 	        tabbedPane.addTab("Table de Routage",pan1);
+	        
 	        tabbedPane.addTab("Caractéritiques",pan2);
 	      
 	       

@@ -28,16 +28,6 @@ public class Fenetre extends JFrame {
 
 	private JMenu analyse = new JMenu("Analyse");
 	private JMenuItem trame = new JMenuItem("Visualiser une Trame");
-
-	// ImageIcon ButtonM = new
-	// ImageIcon(this.getClass().getResource("/image/poste.png"));
-	// ImageIcon ButtonS = new
-	// ImageIcon(this.getClass().getResource("/image/switch.png"));
-	// ImageIcon ButtonR = new
-	// ImageIcon(this.getClass().getResource("/image/routeur.png"));
-	// ImageIcon ButtonH = new
-	// ImageIcon(this.getClass().getResource("/image/HUB.png"));
-
 	
 
 	private PanneauPrincipal pan = new PanneauPrincipal();

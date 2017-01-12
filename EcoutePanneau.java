@@ -13,6 +13,8 @@ public class EcoutePanneau extends MouseAdapter {
 	@Override
 	public void mouseClicked(MouseEvent e) {
 		pan.getPan().getPanelPrincipal().repaint();
+		
+		System.out.println("Pan sous-reseau");
 
 		// Ajout des éléments lors d'un clic sur le panel si un des bouton est
 		// selectionné

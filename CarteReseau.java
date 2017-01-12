@@ -70,6 +70,70 @@ public class CarteReseau implements Serializable {
 		public void setTabRoutage(TableRoutage tabRoutage) {
 			this.tabRoutage = tabRoutage;
 		}
+		
+		/**
+         * Ajoute une règle à la table de routage de la carte réseau
+         * @param r La règle à ajouter
+         */
+        public void addRegle(Regle r) {
+            this.tabRoutage.addRegle(r);
+        }
+
+        /**
+         * Ajoute une règle à la table de routage de la carte réseau à l'index i
+         * @param Regle la règle à ajouter
+         * @param index L'index où ajouter la règle
+         */    
+        public void addRegle(Regle r, int index) {
+            this.tabRoutage.addRegle(r,index);
+        }        
+
+        /**
+         * Ajoute une règle de broadcast à la table de routage de la carte réseau
+         */
+        public void addRegleBroadcast() {
+            IPv4 ip=TableRoutage.broadcastIP;
+            MasqueSousReseau m=TableRoutage.broadcastMasque;
+            this.tabRoutage.addRegle(new Regle(ip,m,this.addresseIP));
+        }
+        
+        /**
+         * Ajoute une règle de passerelle par défaut à la table de routage de la carte réseau
+         * @param ipPasserelle L'ip de la passerelle par défaut à définir
+         */
+        public void addReglePasserelle(IPv4 ipPasserelle) {
+            IPv4 ip=TableRoutage.defautPasserelleIP;
+            MasqueSousReseau m=TableRoutage.defautPasserelleMasque;
+            this.tabRoutage.addRegle(new Regle(ip,m, ipPasserelle));
+        }
+        
+        /**
+         * Ajoute une règle de sous-réseau à la table de routage de la carte réseau
+         * @param ipReseau L'ip du sous réseau
+         */
+        public void addRegleSousReseau(IPv4 ipReseau) {
+            MasqueSousReseau m=TableRoutage.sousReseauMasque;
+            this.tabRoutage.addRegle(new Regle(ipReseau, m, this.addresseIP));
+        }
+        
+        /**
+         * Ajoute une règle de base à la table de routage de la carte réseau
+         */
+        public void addRegleMoi() {
+            IPv4 ip=TableRoutage.moiIP;
+            MasqueSousReseau m=TableRoutage.broadcastMasque;
+            this.tabRoutage.addRegle(new Regle(this.addresseIP, m, ip));
+        }
+    
+        /**
+         * Retire une règle de la table de routage de la carte réseau
+         * @param index L'index de la règle à retirer
+         */
+        public void removeRegle(int index) {
+            this.tabRoutage.removeRegle(index);
+        }
+        
+        
 
 		/**
          * Le toString de la classe

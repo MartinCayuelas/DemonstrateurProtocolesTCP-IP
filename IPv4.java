@@ -26,42 +26,22 @@ public class IPv4 extends Adresse{
     public IPv4(IPv4 ip) {
         super('.',ip.getO1(), ip.getO2(), ip.getO3(), ip.getO4());
     }  
+    
+    /**
+     * G�n�raliser une adresse ip pour les tables de routage
+     * @return L'adresse ip correspondante ayant pour dernier octet O
+     */
+    public IPv4 generaliserIP() {
+        IPv4 ip = new IPv4(this);
+        ip.setOctet4(0);
+        return ip;
+    }
 
     public String toString(){
     	return super.toString();
     }  
     
-    /**
-     * Renvoie le premier octet d'une adresse
-     * @return Le premier octet
-     */
-    public int getO1() {
-        return (Integer) this.octet1;
-    }
     
-    /**
-     * Renvoie le second octet d'une adresse
-     * @return Le second octet
-     */
-    public int getO2() {
-        return (Integer) this.octet2;
-    }
-
-    /**
-     * Renvoie le troisième octet d'une adresse
-     * @return Le troisième octet
-     */
-    public int getO3() {
-        return (Integer) this.octet3;
-    }
-    
-    /**
-     * Renvoie le quatrième octet d'une adresse
-     * @return Le quatrième octet
-     */
-    public int getO4() {
-        return (Integer) this.octet4;
-    }
 
 
 }

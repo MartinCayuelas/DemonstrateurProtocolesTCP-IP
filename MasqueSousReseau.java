@@ -1,15 +1,24 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package modnetwork.Reseau;
 
 import java.io.Serializable;
 
-public class MasqueSousReseau extends Adresse implements Serializable {
+/**
+ *
+ * @author leoreynaert
+ */
+class MasqueSousReseau extends Adresse implements Serializable {
     
     /**
-     * Crée un nouveau masque de sous-réseau
+     * CrÃ©e un nouveau masque de sous-rÃ©seau
      * @param o1 Le premier octet
-     * @param o2 Le deuxième octet
-     * @param o3 Le troisième octet
-     * @param o4 Le quatrième octet
+     * @param o2 Le deuxiÃ¨me octet
+     * @param o3 Le troisiÃ¨me octet
+     * @param o4 Le quatriÃ¨me octet
      */
     public MasqueSousReseau(int o1, int o2, int o3, int o4) {
         super('.', o1, o2, o3, o4);

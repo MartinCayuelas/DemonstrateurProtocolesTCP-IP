@@ -20,12 +20,12 @@ public class Machine extends ElementSousReseau implements Serializable {
         this.oct4++;
         
         this.carteReseau=new CarteReseau(ip);
-       /* this.cacheARP = new ArrayList<RegleARP>();
+       // this.cacheARP = new ArrayList<RegleARP>();
         
         //On assigne les règles de base de la table de routage
         this.carteReseau.addRegleMoi();
-        this.carteReseau.addRegleSousReseau(sr.getIP());
-        this.carteReseau.addRegleBroadcast();*/
+        this.carteReseau.addRegleSousReseau(sr.getIPmachines());
+        this.carteReseau.addRegleBroadcast();
     }
 	/**
 	 * @return the carteReseau

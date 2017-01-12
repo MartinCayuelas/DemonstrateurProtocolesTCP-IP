@@ -11,9 +11,10 @@ public class MAC extends Adresse {
 
 	private String octet5;  // Le 5e octet
 	private String octet6;  // Le 6e octet
-	private static Random generateMAC=new Random();  // Generer une adresse Mac aléatoire
-	private static char[] TabHexa={'A','B','C','D','E','F'}; // HexaDecimal
-
+	private static Random generateMAC=new Random();  // Generer un nombre aléatoire
+	
+	// Tableau contenant les lettres utilis�es en Hexad�cimal
+	private static char[] TabHexa={'A','B','C','D','E','F'}; 
 	 /**
      * Crée une nouvelle adresse MAC
      * @param o1 Le premier octet
@@ -72,38 +73,6 @@ public class MAC extends Adresse {
     }
 
      // Getters
-    
-    /**
-     * Renvoie le premier octet d'une adresse
-     * @return Le premier octet
-     */
-    public String getO1() {
-        return (String) this.octet1;
-    }
-    
-    /**
-     * Renvoie le second octet d'une adresse
-     * @return Le second octet
-     */
-    public String getO2() {
-        return (String) this.octet2;
-    }
-
-    /**
-     * Renvoie le troisième octet d'une adresse
-     * @return Le troisième octet
-     */
-    public String getO3() {
-        return (String) this.octet3;
-    }
-    
-    /**
-     * Renvoie le quatrième octet d'une adresse
-     * @return Le quatrième octet
-     */
-    public String getO4() {
-        return (String) this.octet4;
-    }
     
     /**
      * Renvoie le cinquième octet d'une adresse
