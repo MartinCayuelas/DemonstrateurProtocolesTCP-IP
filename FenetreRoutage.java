@@ -1,6 +1,5 @@
 package modnetwork.Fenetre;
 import javax.swing.JFrame;
-import javax.swing.JLabel;
 
 /**
 *
@@ -9,6 +8,10 @@ import javax.swing.JLabel;
 
 public class FenetreRoutage extends JFrame {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private PanneauTableRoutage pan;
 	
 	public FenetreRoutage() {

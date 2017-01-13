@@ -8,6 +8,10 @@ import java.io.Serializable;
  * @author cayuelasM
  */
 public class Regle implements Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private IPv4 destinataire;
 	private MasqueSousReseau masque;
 	private IPv4 passerelle;

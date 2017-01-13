@@ -1,5 +1,4 @@
 package modnetwork.Reseau;
- import java.io.Serializable;
 
 /**
 * @author CayuelasM
@@ -9,6 +8,11 @@ package modnetwork.Reseau;
 public class IPv4 extends Adresse{
 
 	 /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	/**
      * Crée une nouvelle adresse IPv4
      * @param o1 Le premier octet
      * @param o2 Le deuxième octet
@@ -23,7 +27,8 @@ public class IPv4 extends Adresse{
      * Crée une nouvelle adresse IPv4 par recopie
      * @param ip L'adresse IP à récopier
      */
-    public IPv4(IPv4 ip) {
+    @SuppressWarnings("unchecked")
+	public IPv4(IPv4 ip) {
         super('.',ip.getO1(), ip.getO2(), ip.getO3(), ip.getO4());
     }  
     

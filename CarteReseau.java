@@ -9,6 +9,10 @@ import java.io.Serializable;
 
 public class CarteReseau implements Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private IPv4 addresseIP;
 	private MAC  addresseMAC;
 	private TableRoutage tabRoutage;

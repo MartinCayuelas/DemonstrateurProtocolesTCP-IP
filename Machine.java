@@ -3,7 +3,11 @@ package modnetwork.Reseau;
 import java.io.Serializable;
 
 public class Machine extends ElementSousReseau implements Serializable {
-    private CarteReseau carteReseau;
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	private CarteReseau carteReseau;
     //private ArrayList<RegleARP> cacheARP;
     private static int oct4 = 2;
     /**
@@ -12,12 +16,12 @@ public class Machine extends ElementSousReseau implements Serializable {
      */
     public Machine(SousReseau sr){
     	super(1,sr);
-        IPv4 ipSR = sr.getIPmachines();
+  
         
         
         IPv4 ip = new IPv4((int)sr.getIPmachines().getO1(), (int)sr.getIPmachines().getO2(), (int)sr.getIPmachines().getO3(), oct4);
       
-        this.oct4++;
+        Machine.oct4++;
         
         this.carteReseau=new CarteReseau(ip);
        // this.cacheARP = new ArrayList<RegleARP>();

@@ -7,7 +7,11 @@ import java.util.ArrayList;
 
 public abstract class Element implements Serializable {
 
-    private int nbPorts;
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	private int nbPorts;
     private ArrayList<Element>elementsConnectes;
     
     /**
@@ -16,7 +20,7 @@ public abstract class Element implements Serializable {
      */
     public Element (int nbp) {
         this.nbPorts=nbp;
-        this.elementsConnectes=new ArrayList();
+        this.elementsConnectes=new ArrayList<Element>();
     }
     
     /**
@@ -140,9 +144,9 @@ public abstract class Element implements Serializable {
      * @return Le toString de l'élément courant
      */
     public String toString() {
-        String np="Nb ports : " + this.nbPorts + "\n";
+       
         String nc="Nb connexions : " + getNbConnexions();
-        return np+nc;
+        return nc;
     }
     
 }

@@ -5,6 +5,10 @@ import java.util.ArrayList;
 
 public class Reseau implements Serializable{
 
+		/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 		private String nom;
 		private ArrayList<SousReseau> listeSousReseaux;
 	    private ArrayList<Routeur> listeRouteurs;

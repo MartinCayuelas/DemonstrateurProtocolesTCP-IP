@@ -13,6 +13,11 @@ import javax.swing.JPanel;
 * @author cayuelasM
 */
 public class PanneauImage extends JPanel {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	public void paintComponent(Graphics g) {
 		
 		try {

@@ -6,6 +6,10 @@ import java.awt.Dimension;
 import javax.swing.JPanel;
 
 public class PanelInfos extends JPanel{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private PanneauTableRoutage pan;
 
     public PanelInfos(PanneauTableRoutage p){

@@ -11,6 +11,11 @@ import javax.swing.JFrame;
 
 public class FenetreCorrection extends JFrame {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	public FenetreCorrection() {
 		this.setTitle("Correction");
 		this.setSize(850, 700);

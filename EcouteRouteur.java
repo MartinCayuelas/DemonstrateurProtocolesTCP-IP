@@ -82,7 +82,7 @@ public class EcouteRouteur extends MouseAdapter {
 		if (pan.getPanelPrincipal().getPanneauBouton().isConnectSelected() && pan.getEtapeConnection() == 1) {
 			System.out.println("Connexion_Etape2 : Dans le if cpt = 1");
 			Bouton bou = (Bouton) bouton;
-			pan.setB2(bou);
+			PanneauElement.setB2(bou);
 			Element elem = bou.getElement();
 
 			pan.setElem1(elem);

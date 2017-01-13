@@ -7,7 +7,11 @@ import java.io.Serializable;
  * @author CayuelasM
  */
 public class Adresse <T> implements Serializable {
-    private char separateur;
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	private char separateur;
     private T octet1;
     private T octet2;
     private T octet3;

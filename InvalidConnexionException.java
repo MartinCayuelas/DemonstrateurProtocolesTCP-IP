@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package modnetwork.Reseau;
 
 /**
@@ -12,6 +8,11 @@ package modnetwork.Reseau;
 public class InvalidConnexionException extends Exception {
     
     /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	/**
      * Crée une nouvelle exception lors de la création d'une connexion comportant des erreurs
      */
     public InvalidConnexionException() {

@@ -5,6 +5,10 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public class SousReseau implements Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private Reseau res;
 	private IPv4 IPmachines;
 	private static int octet2 = 40;
@@ -23,7 +27,7 @@ public class SousReseau implements Serializable {
 		
         this.IPmachines= new IPv4(195,octet2,octet3,0);
         
-        this.octet2++;
+        SousReseau.octet2++;
         
         
         
@@ -146,4 +150,57 @@ public class SousReseau implements Serializable {
     public void addConnexion(Connexion c){
     	this.listConnexions.add(c);
     }
+
+	/**
+	 * @return the res
+	 */
+	public Reseau getRes() {
+		return res;
+	}
+
+	/**
+	 * @param res the res to set
+	 */
+	public void setRes(Reseau res) {
+		this.res = res;
+	}
+
+	/**
+	 * @return the octet2
+	 */
+	public static int getOctet2() {
+		return octet2;
+	}
+
+	/**
+	 * @param octet2 the octet2 to set
+	 */
+	public static void setOctet2(int octet2) {
+		SousReseau.octet2 = octet2;
+	}
+
+	/**
+	 * @return the octet3
+	 */
+	public int getOctet3() {
+		return octet3;
+	}
+
+	/**
+	 * @param octet3 the octet3 to set
+	 */
+	public void setOctet3(int octet3) {
+		this.octet3 = octet3;
+	}
+
+	/**
+	 * @param iPmachines the iPmachines to set
+	 */
+	public void setIPmachines(IPv4 iPmachines) {
+		IPmachines = iPmachines;
+	}
+    
+ 
+    
+    
 }

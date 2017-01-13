@@ -16,7 +16,7 @@ public class TableRoutage {
     * Crée une nouvelle table de routage
     */
    public TableRoutage () {
-       this.regles=new ArrayList();
+       this.regles=new ArrayList<Regle>();
    }
 
    //Getters
@@ -82,7 +82,7 @@ public class TableRoutage {
         String s=("IP destinataire  | Masque de sous-réseau | IP Passerelle\n");
         
         
-        /*for (int i=0; i<regles.size();i++) {
+        for (int i=0; i<regles.size();i++) {
             String dest=regles.get(i).getDestinataire().toString();
             String masque=regles.get(i).getMasque().toString();
             String passerelle=regles.get(i).getPasserelle().toString()+"\n";
@@ -119,7 +119,7 @@ public class TableRoutage {
                 s+="      ";
             }
             s+=passerelle;
-        }*/
+        }
         return s;
     }
 }

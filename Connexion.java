@@ -4,6 +4,10 @@ package modnetwork.Reseau;
 import java.io.Serializable;
 
 public class Connexion implements Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private Element elem1;
 	private Element elem2;
 
@@ -74,6 +78,35 @@ public class Connexion implements Serializable {
 		 * "Tous les ports des deux éléments sont occupés."); }
 		 */
 	}
+
+	/**
+	 * @return the elem1
+	 */
+	public Element getElem1() {
+		return elem1;
+	}
+
+	/**
+	 * @param elem1 the elem1 to set
+	 */
+	public void setElem1(Element elem1) {
+		this.elem1 = elem1;
+	}
+
+	/**
+	 * @return the elem2
+	 */
+	public Element getElem2() {
+		return elem2;
+	}
+
+	/**
+	 * @param elem2 the elem2 to set
+	 */
+	public void setElem2(Element elem2) {
+		this.elem2 = elem2;
+	}
+	
 
 	/**
 	 * Le toString() d'une connexion

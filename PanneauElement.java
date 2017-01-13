@@ -11,6 +11,11 @@ import modnetwork.Reseau.Element;
 import modnetwork.Reseau.Routeur;
 
 public class PanneauElement extends JPanel {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	
 	private PanneauPrincipal pan;
 	String s;
 	private static Bouton b1, b2;
@@ -36,7 +41,7 @@ public class PanneauElement extends JPanel {
 		this.setLayout(null);
 		this.setBackground(Color.WHITE);
 		this.addMouseListener(new EcoutePanneauPrincipal(this));
-		this.etapeConnection = 1;
+		PanneauElement.etapeConnection = 1;
 
 	}
 
@@ -126,14 +131,14 @@ public class PanneauElement extends JPanel {
     public Point getPointPanel(String s1,Bouton b2){
         int x2=b2.getParent().getX();
         int y2=b2.getParent().getY();
-        int x,y;
+        
         Point p= new Point();
         if(s1=="d"){
             x2=x2+200;
             y2=y2+100;
             p.setLocation(x2,y2);
         }else if(s1=="g"){
-            x2=x2;
+           
             y2=y2+100;
             p.setLocation(x2,y2);
         }else if(s1=="b"){ 
@@ -142,7 +147,7 @@ public class PanneauElement extends JPanel {
             p.setLocation(x2,y2);
         }else if(s1=="h"){
             x2=x2+100;
-            y2=y2;
+         
             p.setLocation(x2,y2);
         }
         return p;
@@ -322,7 +327,7 @@ public class PanneauElement extends JPanel {
 	
 	/* Remet à 1 l'éatpe de connection*/
 	 public void resetEtapeConnection(){
-	        this.etapeConnection=1;
+	        PanneauElement.etapeConnection=1;
 	    }
 
 	

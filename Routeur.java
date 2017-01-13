@@ -9,14 +9,18 @@ import java.util.ArrayList;
  * @author leoreynaert
  */
 public class Routeur extends Element implements Serializable {
-        private ArrayList<CarteReseau> cartesReseaux;
+        /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+		private ArrayList<CarteReseau> cartesReseaux;
         
         /**
          * Crée un nouveau Routeur sans carte réseau
          */
 	public Routeur() {
             super(2);
-            this.cartesReseaux=new ArrayList();
+            this.cartesReseaux=new ArrayList<CarteReseau>();
 	}
    
         /**
@@ -104,7 +108,7 @@ public class Routeur extends Element implements Serializable {
          * @return Le toString du routeur
          */
         public String toString() {
-            String s="Routeur \n" + super.toString();
+            String s="Routeur :  \n" + super.toString();
             for (int i=0; i<this.cartesReseaux.size(); i++) {
                 s+="\n Carte "+i+" : " + this.cartesReseaux.get(i);
             }

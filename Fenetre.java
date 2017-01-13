@@ -15,6 +15,10 @@ import javax.swing.JMenuItem;
 */
 public class Fenetre extends JFrame {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private JMenuBar menuBar = new JMenuBar();
 	private JMenu fichier = new JMenu("Fichier");
 	private JMenuItem quit = new JMenuItem("Quitter");
@@ -31,7 +35,7 @@ public class Fenetre extends JFrame {
 	
 
 	private PanneauPrincipal pan = new PanneauPrincipal();
-	private PanneauBouton bouton = new PanneauBouton(pan);
+//private PanneauBouton bouton = new PanneauBouton(pan);
 
 	public Fenetre() {
 		this.setTitle("Demonstrateur TCP/IP");

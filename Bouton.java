@@ -6,7 +6,11 @@ import javax.swing.JButton;
 import modnetwork.Reseau.*;
 
 public class Bouton extends JButton{
-    Element elem;
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = -1042195159180649815L;
+	Element elem;
 
     /**
      * Crée un Bouton qui sera ajouté sur un panel

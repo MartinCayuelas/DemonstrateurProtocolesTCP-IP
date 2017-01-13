@@ -23,6 +23,10 @@ import modnetwork.Reseau.Switch;
 
 public class PanneauSousReseau extends JPanel {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private SousReseau sousRes;
 	private PanneauElement pan;
 	private IPv4 IP;

@@ -3,7 +3,11 @@ package modnetwork.Reseau;
 import java.io.Serializable;
 
 public class ElementSousReseau extends Element implements Serializable {
-    private SousReseau sousReseau;
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	private SousReseau sousReseau;
     
     /**
      * Crée un nouvel élément

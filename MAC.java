@@ -1,5 +1,4 @@
 package modnetwork.Reseau;
-import java.io.Serializable;
 import java.util.Random;
 
 /**
@@ -9,6 +8,10 @@ import java.util.Random;
 
 public class MAC extends Adresse {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private String octet5;  // Le 5e octet
 	private String octet6;  // Le 6e octet
 	private static Random generateMAC=new Random();  // Generer un nombre aléatoire
